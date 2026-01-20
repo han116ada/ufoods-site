@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFOODS • Contact</title>
+  <meta name="description" content="Contact UFOODS for quotes and partnerships. TR/EN/DE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F6F7FB; --card:#FFFFFF; --text:#0F172A; --muted:#475569;
+      --line:rgba(15,23,42,.10); --soft:rgba(15,23,42,.04);
+      --brand:#1F7A3E; --brandDark:#0E3B1E;
+      --radius:16px; --shadow:0 10px 30px rgba(15,23,42,.08); --max:1140px;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0; font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 420px at 80% -10%, rgba(245,179,1,.12), transparent 60%),
+        radial-gradient(900px 520px at 0% 0%, rgba(31,122,62,.10), transparent 55%),
+        var(--bg);
+    }
+    a{color:inherit; text-decoration:none;}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+    header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,247,251,.78); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
+    .brand{font-weight:900; letter-spacing:.4px; font-size:18px;}
+    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:18px; align-items:center;}
+    nav a{font-size:14px; color:var(--muted); font-weight:600;}
+    nav a:hover{color:var(--text);}
+    .right{display:flex; align-items:center; gap:10px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px; border-radius:12px; font-weight:700; font-size:14px;
+      border:1px solid var(--line); background:var(--card); cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease;
+      box-shadow:0 6px 16px rgba(15,23,42,.05);
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(15,23,42,.08);}
+    .btn.primary{border:none;color:#fff;background:linear-gradient(135deg,var(--brand),#27C06A);box-shadow:0 10px 22px rgba(31,122,62,.22);}
+
+    .langWrap{position:relative;}
+    .langBtn{
+      display:flex; align-items:center; gap:10px; padding:10px 12px;
+      border-radius:12px; border:1px solid var(--line); background:var(--card);
+      cursor:pointer; font-weight:700; box-shadow:0 6px 16px rgba(15,23,42,.05);
+    }
+    .langBtn small{color:var(--muted); font-weight:600;}
+    .caret{width:8px;height:8px;border-right:2px solid rgba(15,23,42,.55);border-bottom:2px solid rgba(15,23,42,.55);transform:rotate(45deg);}
+    .langMenu{
+      position:absolute; right:0; top:calc(100% + 10px);
+      min-width:190px; border-radius:14px; border:1px solid var(--line);
+      background:var(--card); box-shadow:var(--shadow); overflow:hidden; display:none;
+    }
+    .langMenu.show{display:block;}
+    .langItem{
+      width:100%; padding:12px; background:transparent; border:none; cursor:pointer;
+      display:flex; align-items:center; justify-content:space-between; font-weight:700;
+    }
+    .langItem:hover{background:var(--soft);}
+    .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 8px;background:rgba(15,23,42,.03);}
+
+    section{padding:56px 0;}
+    .card{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:var(--radius); padding:24px; box-shadow:var(--shadow);
+    }
+    .kicker{
+      display:inline-flex; padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(31,122,62,.06);
+      color:var(--brandDark); font-weight:700; font-size:12px;
+    }
+    h1{margin:10px 0 10px; font-size:clamp(28px,3vw,40px); letter-spacing:-.5px; line-height:1.1; font-weight:800;}
+    .muted{color:var(--muted); font-weight:500; line-height:1.7; font-size:15px; margin:0;}
+
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;}
+    .info{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background: rgba(15,23,42,.02);
+      margin-top: 12px;
+    }
+    .info b{display:block; font-size:13px; margin-bottom:4px;}
+    .info p{margin:0; color:var(--muted); font-weight:600; font-size:14px;}
+
+    footer{padding:26px 0 42px; border-top:1px solid var(--line); color:var(--muted); font-size:13px;}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;}
+    .links{display:flex; gap:14px; flex-wrap:wrap;}
+    .links a{color:var(--muted); font-weight:600;}
+    .links a:hover{color:var(--text);}
+
+    .wa{
+      position:fixed; right:18px; bottom:18px; display:flex; align-items:center; gap:10px;
+      padding:12px 14px; border-radius:999px; border:1px solid var(--line);
+      background:var(--card); box-shadow:var(--shadow); z-index:9999;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .wa:hover{transform:translateY(-1px); box-shadow:0 12px 30px rgba(15,23,42,.10);}
+    .waIcon{width:36px;height:36px;border-radius:14px;display:grid;place-items:center;background:rgba(31,122,62,.12);color:var(--brandDark);font-weight:800;}
+    .waText b{font-size:13px;} .waText small{font-size:12px;color:var(--muted);}
+
+    @media(max-width:980px){ .split{grid-template-columns:1fr;} }
+    @media(max-width:760px){ nav ul{display:none;} .waText{display:none;} }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">UFOODS</a>
+      <nav>
+        <ul>
+          <li><a href="products.html" data-i18n="nav_products">Ürünler</a></li>
+          <li><a href="yasou.html" data-i18n="nav_yasou">YASOU</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+          <li><a href="mission.html" data-i18n="nav_mission">Misyon & Vizyon</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="right">
+        <div class="langWrap">
+          <button class="langBtn" id="langBtn">
+            <span id="langLabel">TR</span>
+            <small data-i18n="lang_button">Dil</small>
+            <span class="caret"></span>
+          </button>
+          <div class="langMenu" id="langMenu">
+            <button class="langItem" type="button" data-lang="tr">Türkçe <span class="tag">TR</span></button>
+            <button class="langItem" type="button" data-lang="en">English <span class="tag">EN</span></button>
+            <button class="langItem" type="button" data-lang="de">Deutsch <span class="tag">DE</span></button>
+          </div>
+        </div>
+        <a class="btn primary" id="waTop" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+
+      <div class="card">
+        <span class="kicker" data-i18n="kicker">İletişim</span>
+        <h1 data-i18n="title">Teklif ve iş birliği için bize ulaşın</h1>
+        <p class="muted" data-i18n="desc">
+          En hızlı dönüş WhatsApp üzerinden yapılır. E-posta ile de teklif taleplerinizi iletebilirsiniz.
+        </p>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <span class="kicker" data-i18n="fast_badge">Hızlı İletişim</span>
+          <h2 style="margin:10px 0 8px; font-size:18px; font-weight:800;" data-i18n="fast_title">WhatsApp ile hızlı teklif</h2>
+          <p class="muted" data-i18n="fast_text">
+            Ürün, koli adedi, hedef teslimat ve lokasyon bilgisi iletirseniz hızlıca teklif dönebiliriz.
+          </p>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" id="waInline" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp2">WhatsApp’tan yaz</a>
+            <a class="btn" href="products.html" data-i18n="cta_products">Ürünler</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="kicker" data-i18n="details_badge">Bilgiler</span>
+          <h2 style="margin:10px 0 8px; font-size:18px; font-weight:800;" data-i18n="details_title">İletişim Bilgileri</h2>
+
+          <div class="info">
+            <b data-i18n="phone_t">Telefon / WhatsApp</b>
+            <p>+90 532 265 96 26</p>
+          </div>
+
+          <div class="info">
+            <b data-i18n="mail_t">E-Posta</b>
+            <p>m.han@ufoods.de</p>
+          </div>
+
+          <div class="info">
+            <b data-i18n="note_t">Not</b>
+            <p data-i18n="note_d">Toptan fiyatlar teklif bazlı paylaşılır.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div style="font-weight:900;">UFOODS</div>
+        <div>© <span id="year"></span> • ufoods.de</div>
+      </div>
+      <div class="links">
+        <a href="products.html" data-i18n="nav_products">Ürünler</a>
+        <a href="yasou.html" data-i18n="nav_yasou">YASOU</a>
+        <a href="about.html" data-i18n="nav_about">Hakkımızda</a>
+        <a href="mission.html" data-i18n="nav_mission">Misyon & Vizyon</a>
+        <a href="contact.html" data-i18n="nav_contact">İletişim</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="waBtn" href="#" target="_blank" rel="noopener">
+  <span class="waIcon">WA</span>
+  <span class="waText">
+    <b data-i18n="wa_title">WhatsApp</b>
+    <small data-i18n="wa_sub">Hızlı iletişim</small>
+  </span>
+</a>
+
+<script>
+  const PHONE="905322659626";
+  const LANG_KEY="ufoods_lang";
+  const DEFAULT_LANG="tr";
+
+  const I18N={
+    tr:{
+      lang_button:"Dil",
+      nav_products:"Ürünler", nav_yasou:"YASOU", nav_about:"Hakkımızda", nav_mission:"Misyon & Vizyon", nav_contact:"İletişim",
+      kicker:"İletişim",
+      title:"Teklif ve iş birliği için bize ulaşın",
+      desc:"En hızlı dönüş WhatsApp üzerinden yapılır. E-posta ile de teklif taleplerinizi iletebilirsiniz.",
+      cta_whatsapp:"WhatsApp’tan yaz",
+
+      fast_badge:"Hızlı İletişim",
+      fast_title:"WhatsApp ile hızlı teklif",
+      fast_text:"Ürün, koli adedi, hedef teslimat ve lokasyon bilgisi iletirseniz hızlıca teklif dönebiliriz.",
+      cta_whatsapp2:"WhatsApp’tan yaz",
+      cta_products:"Ürünler",
+
+      details_badge:"Bilgiler",
+      details_title:"İletişim Bilgileri",
+      phone_t:"Telefon / WhatsApp",
+      mail_t:"E-Posta",
+      note_t:"Not",
+      note_d:"Toptan fiyatlar teklif bazlı paylaşılır.",
+
+      wa_title:"WhatsApp", wa_sub:"Hızlı iletişim",
+      wa_msg:"Merhaba, UFOODS için teklif almak istiyorum."
+    },
+    en:{
+      lang_button:"Language",
+      nav_products:"Products", nav_yasou:"YASOU", nav_about:"About", nav_mission:"Mission & Vision", nav_contact:"Contact",
+      kicker:"Contact",
+      title:"Contact us for quotes & partnerships",
+      desc:"Fastest response is via WhatsApp. You can also send quote requests by email.",
+      cta_whatsapp:"Message on WhatsApp",
+
+      fast_badge:"Quick Contact",
+      fast_title:"Fast quote via WhatsApp",
+      fast_text:"Share product, quantity, target delivery and location to receive a quick quote.",
+      cta_whatsapp2:"Message on WhatsApp",
+      cta_products:"Products",
+
+      details_badge:"Details",
+      details_title:"Contact Details",
+      phone_t:"Phone / WhatsApp",
+      mail_t:"Email",
+      note_t:"Note",
+      note_d:"Wholesale pricing is shared via quotation.",
+
+      wa_title:"WhatsApp", wa_sub:"Quick contact",
+      wa_msg:"Hello, I would like to request a quote from UFOODS."
+    },
+    de:{
+      lang_button:"Sprache",
+      nav_products:"Produkte", nav_yasou:"YASOU", nav_about:"Über uns", nav_mission:"Mission & Vision", nav_contact:"Kontakt",
+      kicker:"Kontakt",
+      title:"Kontakt für Angebote & Partnerschaften",
+      desc:"Die schnellste Antwort erhalten Sie über WhatsApp. Angebote können auch per E-Mail angefragt werden.",
+      cta_whatsapp:"WhatsApp schreiben",
+
+      fast_badge:"Schnellkontakt",
+      fast_title:"Schnelles Angebot per WhatsApp",
+      fast_text:"Bitte Produkt, Menge, Lieferziel und Standort teilen – wir senden ein schnelles Angebot.",
+      cta_whatsapp2:"WhatsApp schreiben",
+      cta_products:"Produkte",
+
+      details_badge:"Details",
+      details_title:"Kontaktinformationen",
+      phone_t:"Telefon / WhatsApp",
+      mail_t:"E-Mail",
+      note_t:"Hinweis",
+      note_d:"Großhandelspreise per Angebot.",
+
+      wa_title:"WhatsApp", wa_sub:"Schnellkontakt",
+      wa_msg:"Hallo, ich möchte ein Angebot von UFOODS anfragen."
+    }
+  };
+
+  function getLang(){
+    const saved=localStorage.getItem(LANG_KEY);
+    if(saved && I18N[saved]) return saved;
+    const nav=(navigator.language||"").toLowerCase();
+    if(nav.startsWith("de")) return "de";
+    if(nav.startsWith("en")) return "en";
+    return DEFAULT_LANG;
+  }
+
+  function applyLang(lang){
+    const dict=I18N[lang] || I18N[DEFAULT_LANG];
+    document.querySelectorAll("[data-i18n]").forEach(el=>{
+      const key=el.getAttribute("data-i18n");
+      if(dict[key]!==undefined) el.textContent=dict[key];
+    });
+    document.documentElement.lang=lang;
+    document.getElementById("langLabel").textContent=lang.toUpperCase();
+    localStorage.setItem(LANG_KEY, lang);
+
+    const msg=encodeURIComponent(dict.wa_msg||"");
+    const link=`https://wa.me/${PHONE}?text=${msg}`;
+    document.getElementById("waBtn").href=link;
+    document.getElementById("waTop").href=link;
+    document.getElementById("waInline").href=link;
+  }
+
+  const langBtn=document.getElementById("langBtn");
+  const langMenu=document.getElementById("langMenu");
+  function closeMenu(){ langMenu.classList.remove("show"); }
+  langBtn.addEventListener("click",(e)=>{ e.stopPropagation(); langMenu.classList.toggle("show"); });
+  document.addEventListener("click", closeMenu);
+  langMenu.addEventListener("click",(e)=>e.stopPropagation());
+  langMenu.querySelectorAll("[data-lang]").forEach(btn=>{
+    btn.addEventListener("click",()=>{ applyLang(btn.dataset.lang); closeMenu(); });
+  });
+
+  document.getElementById("year").textContent=new Date().getFullYear();
+  applyLang(getLang());
+</script>
+</body>
+</html>
