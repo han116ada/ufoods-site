@@ -3,425 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YASOU • UFOODS • ufoods.de</title>
-  <meta name="description" content="YASOU by UFOODS — Fine Foods supplier for wholesale & retail in Germany. TR/EN/DE." />
+  <title>UFOODS • Germany Wholesale Fine Foods</title>
+  <meta name="description" content="UFOODS — Fine Foods supplier for wholesale & retail in Germany. TR/EN/DE." />
 
-  <!-- Corporate font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #F6F7FB;
-      --card: #FFFFFF;
-      --text: #0F172A;        /* slate-900 */
-      --muted: #475569;       /* slate-600 */
-      --line: rgba(15,23,42,.10);
-      --soft: rgba(15,23,42,.04);
-
-      --brand: #1F7A3E;       /* corporate green */
-      --brand2: #F5B301;      /* warm gold accent */
-      --brandDark: #0E3B1E;
-
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(15,23,42,.08);
-      --max: 1140px;
+      --bg:#F6F7FB; --card:#FFFFFF; --text:#0F172A; --muted:#475569;
+      --line:rgba(15,23,42,.10); --soft:rgba(15,23,42,.04);
+      --brand:#1F7A3E; --brandDark:#0E3B1E;
+      --radius:16px; --shadow:0 10px 30px rgba(15,23,42,.08); --max:1140px;
     }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
     body{
-      margin:0;
-      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      margin:0; font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
       background:
         radial-gradient(900px 420px at 80% -10%, rgba(245,179,1,.12), transparent 60%),
         radial-gradient(900px 520px at 0% 0%, rgba(31,122,62,.10), transparent 55%),
         var(--bg);
     }
+    a{color:inherit; text-decoration:none;}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
 
-    a{ color:inherit; text-decoration:none; }
-    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-
-    /* NAVBAR */
     header{
       position:sticky; top:0; z-index:50;
       background: rgba(246,247,251,.78);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
+    .brand{font-weight:900; letter-spacing:.4px; font-size:18px;}
 
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 14px 0; gap: 14px;
-    }
+    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:18px; align-items:center;}
+    nav a{font-size:14px; color:var(--muted); font-weight:600;}
+    nav a:hover{color:var(--text);}
 
-    .brand{
-      display:flex; align-items:center; gap: 10px;
-      font-weight: 700;
-      letter-spacing: .2px;
-    }
-
-    .mark{
-      width: 36px; height: 36px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--brand), #34D399);
-      box-shadow: 0 6px 18px rgba(31,122,62,.20);
-    }
-
-    .brandText{
-      display:flex; flex-direction:column; line-height: 1.05;
-    }
-
-    .brandText .top{
-      font-size: 12px; color: var(--muted); font-weight: 600;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-    }
-
-    .brandText .main{
-      font-size: 16px; font-weight: 800;
-    }
-
-    nav ul{
-      list-style:none; margin:0; padding:0;
-      display:flex; gap: 18px; align-items:center;
-    }
-
-    nav a{
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    nav a:hover{ color: var(--text); }
-
-    .right{
-      display:flex; align-items:center; gap: 10px;
-    }
+    .right{display:flex; align-items:center; gap:10px;}
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 14px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      color: var(--text);
-      cursor:pointer;
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-      box-shadow: 0 6px 16px rgba(15,23,42,.05);
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px; border-radius:12px; font-weight:700; font-size:14px;
+      border:1px solid var(--line); background:var(--card); color:var(--text);
+      cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;
+      box-shadow:0 6px 16px rgba(15,23,42,.05);
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(15,23,42,.08);
-    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(15,23,42,.08);}
     .btn.primary{
-      border: none;
+      border:none;
       background: linear-gradient(135deg, var(--brand), #27C06A);
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(31,122,62,.22);
-    }
-    .btn.ghost{
-      background: transparent;
-      box-shadow: none;
+      color:#fff;
+      box-shadow:0 10px 22px rgba(31,122,62,.22);
     }
 
-    /* Language dropdown */
-    .langWrap{ position:relative; }
+    .langWrap{position:relative;}
     .langBtn{
       display:flex; align-items:center; gap:10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      cursor:pointer;
-      font-weight: 700;
-      box-shadow: 0 6px 16px rgba(15,23,42,.05);
+      padding:10px 12px; border-radius:12px; border:1px solid var(--line);
+      background:var(--card); cursor:pointer; font-weight:700;
+      box-shadow:0 6px 16px rgba(15,23,42,.05);
     }
-    .langBtn small{ color: var(--muted); font-weight: 600; }
-    .caret{
-      width:8px; height:8px;
-      border-right: 2px solid rgba(15,23,42,.55);
-      border-bottom: 2px solid rgba(15,23,42,.55);
-      transform: rotate(45deg);
-      margin-left: 2px;
-    }
+    .langBtn small{color:var(--muted); font-weight:600;}
+    .caret{width:8px;height:8px;border-right:2px solid rgba(15,23,42,.55);border-bottom:2px solid rgba(15,23,42,.55);transform:rotate(45deg);}
     .langMenu{
-      position:absolute; right:0; top: calc(100% + 10px);
-      min-width: 190px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      display:none;
+      position:absolute; right:0; top:calc(100% + 10px);
+      min-width:190px; border-radius:14px; border:1px solid var(--line);
+      background:var(--card); box-shadow:var(--shadow);
+      overflow:hidden; display:none;
     }
-    .langMenu.show{ display:block; }
+    .langMenu.show{display:block;}
     .langItem{
-      width:100%;
-      padding: 12px 12px;
-      background: transparent;
-      border:none;
-      cursor:pointer;
-      display:flex; align-items:center; justify-content:space-between;
-      font-weight: 700;
+      width:100%; padding:12px; background:transparent; border:none; cursor:pointer;
+      display:flex; align-items:center; justify-content:space-between; font-weight:700;
     }
-    .langItem:hover{ background: var(--soft); }
-    .tag{
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 3px 8px;
-      background: rgba(15,23,42,.03);
-    }
+    .langItem:hover{background:var(--soft);}
+    .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 8px;background:rgba(15,23,42,.03);}
 
-    /* HERO */
-    section{ padding: 56px 0; }
-    .hero{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 22px;
-      align-items:center;
-    }
-
-    .heroLeft{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .kicker{
-      display:inline-flex;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(31,122,62,.06);
-      color: var(--brandDark);
-      font-weight: 700;
-      font-size: 12px;
-    }
-
-    h1{
-      margin: 14px 0 10px;
-      font-size: clamp(30px, 3.3vw, 46px);
-      letter-spacing: -0.6px;
-      line-height: 1.08;
-      font-weight: 800;
-    }
-
-    .lead{
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-weight: 500;
-      max-width: 70ch;
-      font-size: 15px;
-    }
-
-    .pillRow{
-      display:flex; flex-wrap:wrap; gap: 10px;
-      margin: 14px 0 18px;
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap: 8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(15,23,42,.03);
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    .dot{
-      width: 9px; height: 9px; border-radius: 99px;
-      background: var(--brand);
-      box-shadow: 0 0 0 4px rgba(31,122,62,.12);
-    }
-
-    .heroActions{ display:flex; gap: 10px; flex-wrap:wrap; }
-
-    .heroRight{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .heroRight h3{
-      margin: 0 0 6px;
-      font-size: 16px;
-      font-weight: 800;
-    }
-
-    .heroRight p{
-      margin: 0;
-      color: var(--muted);
-      font-weight: 500;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .miniCards{
-      display:grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .mini{
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px;
-      background: rgba(15,23,42,.02);
-    }
-    .mini b{
-      display:block;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
-
-    /* SECTIONS */
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-
+    section{padding:56px 0;}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center;}
     .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
+      background:var(--card); border:1px solid var(--line);
+      border-radius:var(--radius); padding:24px; box-shadow:var(--shadow);
     }
+    .kicker{
+      display:inline-flex; padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(31,122,62,.06);
+      color:var(--brandDark); font-weight:700; font-size:12px;
+    }
+    h1{margin:14px 0 10px; font-size:clamp(30px,3.3vw,46px); letter-spacing:-.6px; line-height:1.08; font-weight:800;}
+    .lead{margin:0 0 18px; color:var(--muted); line-height:1.65; font-weight:500; font-size:15px; max-width:70ch;}
+    .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(15,23,42,.03);
+      font-size:13px; color:var(--muted); font-weight:600;
+    }
+    .dot{width:9px;height:9px;border-radius:99px;background:var(--brand);box-shadow:0 0 0 4px rgba(31,122,62,.12);}
+    .actions{display:flex; gap:10px; flex-wrap:wrap;}
 
-    .card small{
-      display:inline-flex;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(15,23,42,.03);
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 12px;
-    }
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px;}
+    .mini{border:1px solid var(--line); border-radius:14px; padding:14px; background:rgba(15,23,42,.02);}
+    .mini b{display:block; font-size:13px; margin-bottom:4px;}
+    .muted{color:var(--muted); font-weight:500; line-height:1.6; font-size:14px; margin:0;}
 
-    .card h2{
-      margin: 10px 0 8px;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing:-.2px;
-    }
+    footer{padding:26px 0 42px; border-top:1px solid var(--line); color:var(--muted); font-size:13px;}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;}
+    .links{display:flex; gap:14px; flex-wrap:wrap;}
+    .links a{color:var(--muted); font-weight:600;}
+    .links a:hover{color:var(--text);}
 
-    .card p{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-weight: 500;
-      font-size: 14px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .list{
-      list-style:none;
-      padding: 0;
-      margin: 12px 0 0;
-      display:grid;
-      gap: 10px;
-    }
-    .list li{
-      display:flex; gap: 10px; align-items:flex-start;
-      color: var(--muted);
-      font-weight: 500;
-      line-height: 1.55;
-      font-size: 14px;
-    }
-    .tick{
-      width:18px; height:18px;
-      border-radius: 6px;
-      border: 1px solid rgba(31,122,62,.30);
-      background: rgba(31,122,62,.10);
-      position:relative;
-      flex:0 0 auto;
-      margin-top: 2px;
-    }
-    .tick:after{
-      content:"";
-      position:absolute;
-      left:5px; top:4px;
-      width:7px; height:4px;
-      border-left:2px solid var(--brand);
-      border-bottom:2px solid var(--brand);
-      transform: rotate(-45deg);
-    }
-
-    footer{
-      padding: 26px 0 42px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 10px;
-    }
-    .foot{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 14px;
-      flex-wrap:wrap;
-    }
-    .links{ display:flex; gap: 14px; flex-wrap:wrap; }
-    .links a{ color: var(--muted); font-weight: 600; }
-    .links a:hover{ color: var(--text); }
-
-    /* WhatsApp floating */
     .wa{
-      position: fixed; right: 18px; bottom: 18px;
-      display:flex; align-items:center; gap: 10px;
-      padding: 12px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      z-index: 9999;
-      transition: transform .15s ease, box-shadow .15s ease;
+      position:fixed; right:18px; bottom:18px; display:flex; align-items:center; gap:10px;
+      padding:12px 14px; border-radius:999px; border:1px solid var(--line);
+      background:var(--card); box-shadow:var(--shadow); z-index:9999;
+      transition:transform .15s ease, box-shadow .15s ease;
     }
-    .wa:hover{ transform: translateY(-1px); box-shadow: 0 12px 30px rgba(15,23,42,.10); }
-    .waIcon{
-      width: 36px; height: 36px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      background: rgba(31,122,62,.12);
-      color: var(--brandDark);
-      font-weight: 800;
-    }
-    .waText b{ font-size: 13px; }
-    .waText small{ font-size: 12px; color: var(--muted); }
+    .wa:hover{transform:translateY(-1px); box-shadow:0 12px 30px rgba(15,23,42,.10);}
+    .waIcon{width:36px;height:36px;border-radius:14px;display:grid;place-items:center;background:rgba(31,122,62,.12);color:var(--brandDark);font-weight:800;}
+    .waText b{font-size:13px;} .waText small{font-size:12px;color:var(--muted);}
 
-    /* Mobile */
-    .burger{ display:none; }
-    .mobileMenu{ display:none; }
-
-    @media(max-width: 980px){
-      .hero{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-    }
-    @media(max-width: 760px){
-      nav ul{ display:none; }
-      .burger{ display:inline-flex; }
-      .waText{ display:none; }
-    }
+    @media(max-width:980px){ .hero{grid-template-columns:1fr;} .grid3{grid-template-columns:1fr;} }
+    @media(max-width:760px){ nav ul{display:none;} .waText{display:none;} }
   </style>
 </head>
 
@@ -430,52 +137,47 @@
 <header>
   <div class="container">
     <div class="nav">
+      <!-- ✅ Sol üst: sadece UFOODS -->
+      <a class="brand" href="index.html">UFOODS</a>
 
-      <a class="brand" href="index.html">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="brandText">
-          <span class="top">UFOODS</span>
-          <span class="main">YASOU</span>
-        </span>
-      </a>
-
+      <!-- ✅ Sekmeler artık ayrı sayfalara gidiyor -->
       <nav>
         <ul>
           <li><a href="products.html" data-i18n="nav_products">Ürünler</a></li>
-          <li><a href="#about" data-i18n="nav_about">Hakkımızda</a></li>
-          <li><a href="#mission" data-i18n="nav_mission">Misyon & Vizyon</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
+          <li><a href="yasou.html" data-i18n="nav_yasou">YASOU</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+          <li><a href="mission.html" data-i18n="nav_mission">Misyon & Vizyon</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
         </ul>
       </nav>
 
       <div class="right">
         <div class="langWrap">
-          <button class="langBtn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <button class="langBtn" id="langBtn">
             <span id="langLabel">TR</span>
             <small data-i18n="lang_button">Dil</small>
             <span class="caret" aria-hidden="true"></span>
           </button>
-          <div class="langMenu" id="langMenu" role="menu">
+          <div class="langMenu" id="langMenu">
             <button class="langItem" type="button" data-lang="tr">Türkçe <span class="tag">TR</span></button>
             <button class="langItem" type="button" data-lang="en">English <span class="tag">EN</span></button>
             <button class="langItem" type="button" data-lang="de">Deutsch <span class="tag">DE</span></button>
           </div>
         </div>
-        <a class="btn primary" href="#contact" data-i18n="cta_contact">İletişime Geç</a>
-      </div>
 
+        <a class="btn primary" href="contact.html" data-i18n="cta_contact">İletişime Geç</a>
+      </div>
     </div>
   </div>
 </header>
 
 <main>
-
-  <!-- HERO -->
   <section>
     <div class="container">
+
       <div class="hero">
-        <div class="heroLeft">
-          <span class="kicker" data-i18n="hero_badge">UFOODS • YASOU</span>
+        <div class="card">
+          <span class="kicker" data-i18n="hero_badge">UFOODS • Germany</span>
           <h1 data-i18n="hero_title">Germany Wholesale Ready Fine Foods</h1>
           <p class="lead" data-i18n="hero_lead">
             Almanya içi toptancılar ve marketler için planlı tedarik. Güvenilir kalite, istikrarlı sevkiyat ve güçlü iş ortaklığı.
@@ -487,156 +189,67 @@
             <span class="pill"><span class="dot"></span><span data-i18n="chip_supply">Planlı tedarik</span></span>
           </div>
 
-          <div class="heroActions">
+          <div class="actions">
             <a class="btn primary" href="products.html" data-i18n="cta_products">Ürünleri Gör</a>
-            <a class="btn" id="waInlineTop" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
+            <a class="btn" id="waInline" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
           </div>
         </div>
 
-        <div class="heroRight">
-          <h3 data-i18n="focus_title">Asma Yaprağı</h3>
-          <p data-i18n="focus_desc">
-            Kavanoz 1062cc (454g süzme) ve vakum seçenekleri ile market & toptancı kanalına uygun tedarik.
+        <div class="card">
+          <h3 style="margin:0 0 8px; font-size:16px; font-weight:800;" data-i18n="right_title">B2B Odaklı Çalışma</h3>
+          <p class="muted" data-i18n="right_desc">
+            Ürünlerimiz teklif bazlı paylaşılır ve sevkiyat planı sipariş akışına göre netleştirilir.
           </p>
 
-          <div class="miniCards">
+          <div style="display:grid; gap:12px; margin-top:16px;">
             <div class="mini">
-              <b data-i18n="focus_point1_t">B2B yaklaşım</b>
-              <p data-i18n="focus_point1_d">Teklif bazlı çalışma, düzenli sevkiyat planı.</p>
+              <b data-i18n="mini1_t">Planlı sevkiyat</b>
+              <p class="muted" data-i18n="mini1_d">Düzenli tedarik ve operasyon uyumu.</p>
             </div>
             <div class="mini">
-              <b data-i18n="focus_point2_t">Tutarlılık</b>
-              <p data-i18n="focus_point2_d">Standart ürün spesifikasyonu ile sürdürülebilir kalite.</p>
+              <b data-i18n="mini2_t">Genişleyen portföy</b>
+              <p class="muted" data-i18n="mini2_d">YASOU ile başlayan ürün çeşitliliği büyüyor.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Highlights -->
+      <!-- Ana sayfada sadece özet kartlar -->
       <div class="grid3">
         <div class="card">
-          <small data-i18n="q1_badge">Ürün</small>
-          <h2 data-i18n="q1_title">Çeşitlilik</h2>
-          <p data-i18n="q1_desc">Şu an odakta asma yaprağı var. Kısa zamanda portföy genişleyecek.</p>
+          <span class="kicker" data-i18n="c1_badge">Ürün</span>
+          <h3 style="margin:10px 0 6px; font-size:18px; font-weight:800;" data-i18n="c1_title">Çeşitlilik</h3>
+          <p class="muted" data-i18n="c1_desc">Şu an ürün portföyümüz büyüme aşamasında. Yeni ürünler yakında.</p>
         </div>
         <div class="card">
-          <small data-i18n="q2_badge">Pazar</small>
-          <h2 data-i18n="q2_title">Almanya</h2>
-          <p data-i18n="q2_desc">Toptancılar ve market zincirleri için uygun operasyon ve iletişim.</p>
+          <span class="kicker" data-i18n="c2_badge">Pazar</span>
+          <h3 style="margin:10px 0 6px; font-size:18px; font-weight:800;" data-i18n="c2_title">Almanya</h3>
+          <p class="muted" data-i18n="c2_desc">Toptancılar ve market zincirleri için uygun operasyon & iletişim.</p>
         </div>
         <div class="card">
-          <small data-i18n="q3_badge">İletişim</small>
-          <h2 data-i18n="q3_title">Hızlı Teklif</h2>
-          <p data-i18n="q3_desc">WhatsApp ile direkt fiyat ve teslimat detaylarını isteyin.</p>
+          <span class="kicker" data-i18n="c3_badge">İletişim</span>
+          <h3 style="margin:10px 0 6px; font-size:18px; font-weight:800;" data-i18n="c3_title">Hızlı Teklif</h3>
+          <p class="muted" data-i18n="c3_desc">WhatsApp üzerinden hızlıca fiyat ve teslimat detaylarını alın.</p>
         </div>
       </div>
 
     </div>
   </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="split">
-        <div class="card">
-          <small data-i18n="nav_about">Hakkımızda</small>
-          <h2 data-i18n="about_title">Hakkımızda</h2>
-          <p data-i18n="about_text">
-            UFOODS olarak 15 yılı aşkın deneyimimizle gıda sektöründe güvenilir ve sürdürülebilir tedarik çözümleri sunuyoruz.
-            YASOU markamız ile Almanya’da toptancılar ve marketler için planlı sevkiyat, istikrarlı kalite ve profesyonel iş birliği hedefliyoruz.
-          </p>
-        </div>
-
-        <div class="card">
-          <small data-i18n="about_highlight_title">Neden YASOU?</small>
-          <h2 data-i18n="about_highlight_title">Neden YASOU?</h2>
-          <ul class="list">
-            <li><span class="tick"></span><span data-i18n="why_1">B2B odaklı iletişim ve teklif bazlı çalışma</span></li>
-            <li><span class="tick"></span><span data-i18n="why_2">Standart spesifikasyonla tutarlı ürün kalitesi</span></li>
-            <li><span class="tick"></span><span data-i18n="why_3">Almanya pazarına uygun lojistik yaklaşım</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSION -->
-  <section id="mission">
-    <div class="container">
-      <div class="split">
-        <div class="card">
-          <small data-i18n="mission_title">Misyonumuz</small>
-          <h2 data-i18n="mission_title">Misyonumuz</h2>
-          <p data-i18n="mission_text">
-            Almanya içi toptancılar ve marketler için yüksek kalite standardında, planlı ve sürdürülebilir gıda tedariki sağlamak.
-          </p>
-        </div>
-        <div class="card">
-          <small data-i18n="vision_title">Vizyonumuz</small>
-          <h2 data-i18n="vision_title">Vizyonumuz</h2>
-          <p data-i18n="vision_text">
-            YASOU markasını Avrupa pazarında güvenilir bir fine foods tedarikçisi olarak konumlandırmak ve ürün çeşitliliğini büyütmek.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="split">
-        <div class="card">
-          <small data-i18n="contact_title">İletişim</small>
-          <h2 data-i18n="contact_title">İletişim</h2>
-          <p data-i18n="contact_text">
-            Teklif ve iş birliği talepleriniz için bize ulaşın. En hızlı dönüş WhatsApp üzerinden yapılır.
-          </p>
-
-          <ul class="list">
-            <li><span class="tick"></span><span><b data-i18n="contact_phone_t">Telefon / WhatsApp</b>: +90 532 265 96 26</span></li>
-            <li><span class="tick"></span><span><b data-i18n="contact_mail_t">E-Posta</b>: m.han@ufoods.de</span></li>
-          </ul>
-
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" id="waInline" href="#" target="_blank" rel="noopener" data-i18n="contact_btn_wa">WhatsApp’tan yaz</a>
-            <a class="btn" href="products.html" data-i18n="contact_btn_products">Ürünler</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <small data-i18n="contact_note_title">Not</small>
-          <h2 data-i18n="contact_note_title">Not</h2>
-          <p data-i18n="contact_note">
-            Şu an ürün kataloğu tek ürün üzerinden ilerliyor. Çok yakında ürün çeşitliliği artacaktır.
-          </p>
-          <ul class="list">
-            <li><span class="tick"></span><span data-i18n="note_1">Toptan fiyatlar teklif bazlı paylaşılır</span></li>
-            <li><span class="tick"></span><span data-i18n="note_2">Sevkiyat detayları sipariş planına göre netleştirilir</span></li>
-            <li><span class="tick"></span><span data-i18n="note_3">Kurumsal iş birliklerine açığız</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer>
   <div class="container">
     <div class="foot">
-      <div style="display:flex; gap:10px; align-items:center;">
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <div style="font-weight:800;">YASOU</div>
-          <div>© <span id="year"></span> • ufoods.de</div>
-        </div>
+      <div>
+        <div style="font-weight:900;">UFOODS</div>
+        <div>© <span id="year"></span> • ufoods.de</div>
       </div>
       <div class="links">
         <a href="products.html" data-i18n="nav_products">Ürünler</a>
-        <a href="#about" data-i18n="nav_about">Hakkımızda</a>
-        <a href="#mission" data-i18n="nav_mission">Misyon & Vizyon</a>
-        <a href="#contact" data-i18n="nav_contact">İletişim</a>
+        <a href="yasou.html" data-i18n="nav_yasou">YASOU</a>
+        <a href="about.html" data-i18n="nav_about">Hakkımızda</a>
+        <a href="mission.html" data-i18n="nav_mission">Misyon & Vizyon</a>
+        <a href="contact.html" data-i18n="nav_contact">İletişim</a>
       </div>
     </div>
   </div>
@@ -651,236 +264,149 @@
 </a>
 
 <script>
-  const PHONE = "905322659626";
-  const LANG_KEY = "yasou_lang";
-  const DEFAULT_LANG = "tr";
+  const PHONE="905322659626";
+  const LANG_KEY="ufoods_lang";
+  const DEFAULT_LANG="tr";
 
-  const I18N = {
-    tr: {
-      lang_button: "Dil",
-      nav_products: "Ürünler",
-      nav_about: "Hakkımızda",
-      nav_mission: "Misyon & Vizyon",
-      nav_contact: "İletişim",
-      cta_contact: "İletişime Geç",
+  const I18N={
+    tr:{
+      lang_button:"Dil",
+      nav_products:"Ürünler",
+      nav_yasou:"YASOU",
+      nav_about:"Hakkımızda",
+      nav_mission:"Misyon & Vizyon",
+      nav_contact:"İletişim",
+      cta_contact:"İletişime Geç",
 
-      hero_badge: "UFOODS • YASOU",
-      hero_title: "Germany Wholesale Ready Fine Foods",
-      hero_lead: "Almanya içi toptancılar ve marketler için planlı tedarik. Güvenilir kalite, istikrarlı sevkiyat ve güçlü iş ortaklığı.",
-      chip_market: "Hedef: DE Toptancı & Market",
-      chip_exp: "15+ yıl deneyim",
-      chip_supply: "Planlı tedarik",
-      cta_products: "Ürünleri Gör",
-      cta_whatsapp: "WhatsApp’tan yaz",
+      hero_badge:"UFOODS • Germany",
+      hero_title:"Germany Wholesale Ready Fine Foods",
+      hero_lead:"Almanya içi toptancılar ve marketler için planlı tedarik. Güvenilir kalite, istikrarlı sevkiyat ve güçlü iş ortaklığı.",
+      chip_market:"Hedef: DE Toptancı & Market",
+      chip_exp:"15+ yıl deneyim",
+      chip_supply:"Planlı tedarik",
+      cta_products:"Ürünleri Gör",
+      cta_whatsapp:"WhatsApp’tan yaz",
 
-      focus_title: "Asma Yaprağı",
-      focus_desc: "Kavanoz 1062cc (454g süzme) ve vakum seçenekleri ile market & toptancı kanalına uygun tedarik.",
-      focus_point1_t: "B2B yaklaşım",
-      focus_point1_d: "Teklif bazlı çalışma, düzenli sevkiyat planı.",
-      focus_point2_t: "Tutarlılık",
-      focus_point2_d: "Standart ürün spesifikasyonu ile sürdürülebilir kalite.",
+      right_title:"B2B Odaklı Çalışma",
+      right_desc:"Ürünlerimiz teklif bazlı paylaşılır ve sevkiyat planı sipariş akışına göre netleştirilir.",
+      mini1_t:"Planlı sevkiyat",
+      mini1_d:"Düzenli tedarik ve operasyon uyumu.",
+      mini2_t:"Genişleyen portföy",
+      mini2_d:"YASOU ile başlayan ürün çeşitliliği büyüyor.",
 
-      q1_badge:"Ürün", q1_title:"Çeşitlilik", q1_desc:"Şu an odakta asma yaprağı var. Kısa zamanda portföy genişleyecek.",
-      q2_badge:"Pazar", q2_title:"Almanya", q2_desc:"Toptancılar ve market zincirleri için uygun operasyon ve iletişim.",
-      q3_badge:"İletişim", q3_title:"Hızlı Teklif", q3_desc:"WhatsApp ile direkt fiyat ve teslimat detaylarını isteyin.",
+      c1_badge:"Ürün", c1_title:"Çeşitlilik", c1_desc:"Şu an ürün portföyümüz büyüme aşamasında. Yeni ürünler yakında.",
+      c2_badge:"Pazar", c2_title:"Almanya", c2_desc:"Toptancılar ve market zincirleri için uygun operasyon & iletişim.",
+      c3_badge:"İletişim", c3_title:"Hızlı Teklif", c3_desc:"WhatsApp üzerinden hızlıca fiyat ve teslimat detaylarını alın.",
 
-      about_title:"Hakkımızda",
-      about_text:"UFOODS olarak 15 yılı aşkın deneyimimizle gıda sektöründe güvenilir ve sürdürülebilir tedarik çözümleri sunuyoruz. YASOU markamız ile Almanya’da toptancılar ve marketler için planlı sevkiyat, istikrarlı kalite ve profesyonel iş birliği hedefliyoruz.",
-      about_highlight_title:"Neden YASOU?",
-      why_1:"B2B odaklı iletişim ve teklif bazlı çalışma",
-      why_2:"Standart spesifikasyonla tutarlı ürün kalitesi",
-      why_3:"Almanya pazarına uygun lojistik yaklaşım",
-
-      mission_title:"Misyonumuz",
-      mission_text:"Almanya içi toptancılar ve marketler için yüksek kalite standardında, planlı ve sürdürülebilir gıda tedariki sağlamak.",
-      vision_title:"Vizyonumuz",
-      vision_text:"YASOU markasını Avrupa pazarında güvenilir bir fine foods tedarikçisi olarak konumlandırmak ve ürün çeşitliliğini büyütmek.",
-
-      contact_title:"İletişim",
-      contact_text:"Teklif ve iş birliği talepleriniz için bize ulaşın. En hızlı dönüş WhatsApp üzerinden yapılır.",
-      contact_phone_t:"Telefon / WhatsApp",
-      contact_mail_t:"E-Posta",
-      contact_btn_wa:"WhatsApp’tan yaz",
-      contact_btn_products:"Ürünler",
-
-      contact_note_title:"Not",
-      contact_note:"Şu an ürün kataloğu tek ürün üzerinden ilerliyor. Çok yakında ürün çeşitliliği artacaktır.",
-      note_1:"Toptan fiyatlar teklif bazlı paylaşılır",
-      note_2:"Sevkiyat detayları sipariş planına göre netleştirilir",
-      note_3:"Kurumsal iş birliklerine açığız",
-
-      wa_title:"WhatsApp",
-      wa_sub:"Hızlı iletişim",
-      wa_msg:"Merhaba, YASOU / UFOODS için fiyat ve teslimat bilgisi rica ederim."
+      wa_title:"WhatsApp", wa_sub:"Hızlı iletişim",
+      wa_msg:"Merhaba, UFOODS ürünleri için fiyat ve teslimat bilgisi rica ederim."
     },
 
-    en: {
-      lang_button: "Language",
-      nav_products: "Products",
-      nav_about: "About",
-      nav_mission: "Mission & Vision",
-      nav_contact: "Contact",
-      cta_contact: "Get in touch",
+    en:{
+      lang_button:"Language",
+      nav_products:"Products",
+      nav_yasou:"YASOU",
+      nav_about:"About",
+      nav_mission:"Mission & Vision",
+      nav_contact:"Contact",
+      cta_contact:"Get in touch",
 
-      hero_badge: "UFOODS • YASOU",
-      hero_title: "Germany Wholesale Ready Fine Foods",
-      hero_lead: "Planned supply for wholesalers and retail markets in Germany. Reliable quality, stable shipments and strong partnerships.",
-      chip_market: "Target: DE Wholesale & Retail",
-      chip_exp: "15+ years experience",
-      chip_supply: "Planned supply",
-      cta_products: "View Products",
-      cta_whatsapp: "Message on WhatsApp",
+      hero_badge:"UFOODS • Germany",
+      hero_title:"Germany Wholesale Ready Fine Foods",
+      hero_lead:"Planned supply for wholesalers and markets in Germany. Reliable quality, stable shipments and strong partnerships.",
+      chip_market:"Target: DE Wholesale & Retail",
+      chip_exp:"15+ years experience",
+      chip_supply:"Planned supply",
+      cta_products:"View Products",
+      cta_whatsapp:"Message on WhatsApp",
 
-      focus_title: "Vine Leaves",
-      focus_desc: "Jar 1062cc (454g drained) and vacuum options suitable for retail & wholesale channels.",
-      focus_point1_t: "B2B approach",
-      focus_point1_d: "Quote-based workflow with shipment planning.",
-      focus_point2_t: "Consistency",
-      focus_point2_d: "Standard specs for sustainable quality.",
+      right_title:"B2B Focused Workflow",
+      right_desc:"Our products are shared via quotation, and shipments are planned based on order flow.",
+      mini1_t:"Planned shipments",
+      mini1_d:"Stable supply and operational alignment.",
+      mini2_t:"Growing portfolio",
+      mini2_d:"Product variety is expanding with YASOU.",
 
-      q1_badge:"Product", q1_title:"Variety", q1_desc:"Currently focused on vine leaves. Portfolio will expand soon.",
-      q2_badge:"Market", q2_title:"Germany", q2_desc:"Operations and communication optimized for wholesalers & retail chains.",
-      q3_badge:"Contact", q3_title:"Fast Quote", q3_desc:"Request pricing and delivery details via WhatsApp.",
+      c1_badge:"Product", c1_title:"Variety", c1_desc:"Our portfolio is expanding. New products are coming soon.",
+      c2_badge:"Market", c2_title:"Germany", c2_desc:"Operations and communication for wholesalers & retail chains.",
+      c3_badge:"Contact", c3_title:"Fast Quote", c3_desc:"Get pricing and delivery details via WhatsApp.",
 
-      about_title:"About Us",
-      about_text:"With over 15 years of experience, UFOODS provides reliable and sustainable food supply solutions. With our YASOU brand, we aim to deliver planned shipments, consistent quality, and professional cooperation for wholesalers and markets in Germany.",
-      about_highlight_title:"Why YASOU?",
-      why_1:"B2B communication & quote-based workflow",
-      why_2:"Consistent product quality with standard specifications",
-      why_3:"Logistics approach aligned with the German market",
-
-      mission_title:"Our Mission",
-      mission_text:"To provide planned and sustainable fine foods supply at high quality standards for wholesalers and markets in Germany.",
-      vision_title:"Our Vision",
-      vision_text:"To position YASOU as a trusted fine foods supplier in Europe and grow our product variety.",
-
-      contact_title:"Contact",
-      contact_text:"Reach out for quotes and partnerships. The fastest response is via WhatsApp.",
-      contact_phone_t:"Phone / WhatsApp",
-      contact_mail_t:"Email",
-      contact_btn_wa:"Message on WhatsApp",
-      contact_btn_products:"Products",
-
-      contact_note_title:"Note",
-      contact_note:"For now, our catalog starts with one main product. More variety will be added soon.",
-      note_1:"Wholesale pricing is shared via quotation",
-      note_2:"Delivery details are clarified based on order planning",
-      note_3:"We are open to corporate partnerships",
-
-      wa_title:"WhatsApp",
-      wa_sub:"Quick contact",
-      wa_msg:"Hello, I would like pricing and delivery information for YASOU / UFOODS."
+      wa_title:"WhatsApp", wa_sub:"Quick contact",
+      wa_msg:"Hello, I would like pricing and delivery information for UFOODS products."
     },
 
-    de: {
-      lang_button: "Sprache",
-      nav_products: "Produkte",
-      nav_about: "Über uns",
-      nav_mission: "Mission & Vision",
-      nav_contact: "Kontakt",
-      cta_contact: "Kontakt aufnehmen",
+    de:{
+      lang_button:"Sprache",
+      nav_products:"Produkte",
+      nav_yasou:"YASOU",
+      nav_about:"Über uns",
+      nav_mission:"Mission & Vision",
+      nav_contact:"Kontakt",
+      cta_contact:"Kontakt aufnehmen",
 
-      hero_badge: "UFOODS • YASOU",
-      hero_title: "Germany Wholesale Ready Fine Foods",
-      hero_lead: "Geplante Lieferung für Großhändler und Märkte in Deutschland. Zuverlässige Qualität, stabile Lieferungen und starke Partnerschaften.",
-      chip_market: "Ziel: DE Großhandel & Retail",
-      chip_exp: "15+ Jahre Erfahrung",
-      chip_supply: "Geplante Lieferung",
-      cta_products: "Produkte ansehen",
-      cta_whatsapp: "WhatsApp schreiben",
+      hero_badge:"UFOODS • Deutschland",
+      hero_title:"Germany Wholesale Ready Fine Foods",
+      hero_lead:"Geplante Lieferung für Großhandel und Märkte in Deutschland. Zuverlässige Qualität und stabile Lieferungen.",
+      chip_market:"Ziel: DE Großhandel & Retail",
+      chip_exp:"15+ Jahre Erfahrung",
+      chip_supply:"Geplante Lieferung",
+      cta_products:"Produkte ansehen",
+      cta_whatsapp:"WhatsApp schreiben",
 
-      focus_title: "Weinblätter",
-      focus_desc: "Glas 1062cc (Abtropfgewicht 454g) und Vakuumoptionen für Retail- und Großhandelskanäle.",
-      focus_point1_t: "B2B Ansatz",
-      focus_point1_d: "Angebotsbasierter Ablauf mit Lieferplanung.",
-      focus_point2_t: "Konsistenz",
-      focus_point2_d: "Standard-Spezifikationen für nachhaltige Qualität.",
+      right_title:"B2B Prozess",
+      right_desc:"Unsere Produkte werden per Angebot geteilt, Lieferungen werden nach Bestellplanung organisiert.",
+      mini1_t:"Geplante Lieferungen",
+      mini1_d:"Stabile Versorgung und operative Abstimmung.",
+      mini2_t:"Wachsendes Sortiment",
+      mini2_d:"Sortiment wächst mit YASOU.",
 
-      q1_badge:"Produkt", q1_title:"Vielfalt", q1_desc:"Aktuell Fokus auf Weinblätter. Das Sortiment wird bald erweitert.",
-      q2_badge:"Markt", q2_title:"Deutschland", q2_desc:"Optimiert für Großhändler und Einzelhandelsketten.",
-      q3_badge:"Kontakt", q3_title:"Schnelles Angebot", q3_desc:"Preise und Lieferdetails per WhatsApp anfragen.",
+      c1_badge:"Produkt", c1_title:"Vielfalt", c1_desc:"Unser Sortiment wächst. Neue Produkte folgen bald.",
+      c2_badge:"Markt", c2_title:"Deutschland", c2_desc:"Für Großhändler und Einzelhandelsketten geeignet.",
+      c3_badge:"Kontakt", c3_title:"Schnelles Angebot", c3_desc:"Preise und Lieferdetails via WhatsApp anfragen.",
 
-      about_title:"Über uns",
-      about_text:"Mit über 15 Jahren Erfahrung bietet UFOODS zuverlässige und nachhaltige Lebensmittel-Lösungen. Mit unserer Marke YASOU setzen wir auf geplante Lieferungen, konstante Qualität und professionelle Zusammenarbeit für Großhändler und Märkte in Deutschland.",
-      about_highlight_title:"Warum YASOU?",
-      why_1:"B2B-Kommunikation & angebotsbasierter Prozess",
-      why_2:"Konstante Qualität durch Standard-Spezifikationen",
-      why_3:"Logistikansatz passend zum deutschen Markt",
-
-      mission_title:"Unsere Mission",
-      mission_text:"Geplante und nachhaltige Fine-Foods-Versorgung in hoher Qualität für Großhandel und Märkte in Deutschland.",
-      vision_title:"Unsere Vision",
-      vision_text:"YASOU als zuverlässigen Fine-Foods-Lieferanten in Europa positionieren und das Sortiment erweitern.",
-
-      contact_title:"Kontakt",
-      contact_text:"Kontaktieren Sie uns für Angebote und Kooperationen. Am schnellsten geht es über WhatsApp.",
-      contact_phone_t:"Telefon / WhatsApp",
-      contact_mail_t:"E-Mail",
-      contact_btn_wa:"WhatsApp schreiben",
-      contact_btn_products:"Produkte",
-
-      contact_note_title:"Hinweis",
-      contact_note:"Aktuell starten wir mit einem Hauptprodukt. Weitere Produkte folgen in Kürze.",
-      note_1:"Großhandelspreise per Angebot",
-      note_2:"Lieferdetails werden nach Bestellplanung geklärt",
-      note_3:"Wir sind offen für Partnerschaften",
-
-      wa_title:"WhatsApp",
-      wa_sub:"Schnellkontakt",
-      wa_msg:"Hallo, ich möchte Preis- und Lieferinformationen für YASOU / UFOODS erhalten."
+      wa_title:"WhatsApp", wa_sub:"Schnellkontakt",
+      wa_msg:"Hallo, ich möchte Preis- und Lieferinformationen für UFOODS Produkte erhalten."
     }
   };
 
-  function getInitialLang(){
-    const saved = localStorage.getItem(LANG_KEY);
+  function getLang(){
+    const saved=localStorage.getItem(LANG_KEY);
     if(saved && I18N[saved]) return saved;
-    const nav = (navigator.language || "").toLowerCase();
+    const nav=(navigator.language||"").toLowerCase();
     if(nav.startsWith("de")) return "de";
     if(nav.startsWith("en")) return "en";
     return DEFAULT_LANG;
   }
 
   function applyLang(lang){
-    const dict = I18N[lang] || I18N[DEFAULT_LANG];
-
+    const dict=I18N[lang] || I18N[DEFAULT_LANG];
     document.querySelectorAll("[data-i18n]").forEach(el=>{
-      const key = el.getAttribute("data-i18n");
-      if(dict[key] !== undefined) el.textContent = dict[key];
+      const key=el.getAttribute("data-i18n");
+      if(dict[key]!==undefined) el.textContent=dict[key];
     });
 
-    document.documentElement.lang = lang;
-    document.getElementById("langLabel").textContent = lang.toUpperCase();
+    document.documentElement.lang=lang;
+    document.getElementById("langLabel").textContent=lang.toUpperCase();
     localStorage.setItem(LANG_KEY, lang);
 
-    const msg = encodeURIComponent(dict.wa_msg || "");
-    const link = `https://wa.me/${PHONE}?text=${msg}`;
-    document.getElementById("waBtn").href = link;
-    document.getElementById("waInline").href = link;
-    document.getElementById("waInlineTop").href = link;
+    const msg=encodeURIComponent(dict.wa_msg||"");
+    const link=`https://wa.me/${PHONE}?text=${msg}`;
+    document.getElementById("waBtn").href=link;
+    document.getElementById("waInline").href=link;
   }
 
-  const langBtn = document.getElementById("langBtn");
-  const langMenu = document.getElementById("langMenu");
-  function closeLangMenu(){
-    langMenu.classList.remove("show");
-    langBtn.setAttribute("aria-expanded", "false");
-  }
-  langBtn.addEventListener("click", (e)=>{
-    e.stopPropagation();
-    const open = langMenu.classList.toggle("show");
-    langBtn.setAttribute("aria-expanded", String(open));
-  });
-  document.addEventListener("click", ()=> closeLangMenu());
-  langMenu.addEventListener("click", (e)=> e.stopPropagation());
+  const langBtn=document.getElementById("langBtn");
+  const langMenu=document.getElementById("langMenu");
+  function closeMenu(){ langMenu.classList.remove("show"); }
+  langBtn.addEventListener("click",(e)=>{ e.stopPropagation(); langMenu.classList.toggle("show"); });
+  document.addEventListener("click", closeMenu);
+  langMenu.addEventListener("click",(e)=>e.stopPropagation());
   langMenu.querySelectorAll("[data-lang]").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      applyLang(btn.getAttribute("data-lang"));
-      closeLangMenu();
-    });
+    btn.addEventListener("click",()=>{ applyLang(btn.dataset.lang); closeMenu(); });
   });
 
-  document.getElementById('year').textContent = new Date().getFullYear();
-  applyLang(getInitialLang());
+  document.getElementById("year").textContent=new Date().getFullYear();
+  applyLang(getLang());
 </script>
 
 </body>
