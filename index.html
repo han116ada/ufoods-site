@@ -4,198 +4,423 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YASOU • UFOODS • ufoods.de</title>
-  <meta name="description" content="YASOU by UFOODS — Fine Foods supplier for wholesale & retail in Germany. Vine Leaves in jar and vacuum packaging. TR/EN/DE." />
-  <link rel="canonical" href="https://www.ufoods.de/" />
+  <meta name="description" content="YASOU by UFOODS — Fine Foods supplier for wholesale & retail in Germany. TR/EN/DE." />
+
+  <!-- Corporate font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#070A12; --text:#EAF0FF; --muted:rgba(234,240,255,.72);
-      --line:rgba(255,255,255,.12);
-      --brand1:#FFB000; --brand2:#35D07F; --brand3:#00D4FF;
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius: 18px; --radius2: 28px; --max: 1180px;
+      --bg: #F6F7FB;
+      --card: #FFFFFF;
+      --text: #0F172A;        /* slate-900 */
+      --muted: #475569;       /* slate-600 */
+      --line: rgba(15,23,42,.10);
+      --soft: rgba(15,23,42,.04);
+
+      --brand: #1F7A3E;       /* corporate green */
+      --brand2: #F5B301;      /* warm gold accent */
+      --brandDark: #0E3B1E;
+
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15,23,42,.08);
+      --max: 1140px;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% 0%, rgba(255,176,0,.22), transparent 60%),
-        radial-gradient(900px 600px at 85% 10%, rgba(0,212,255,.18), transparent 55%),
-        radial-gradient(700px 500px at 55% 95%, rgba(53,208,127,.16), transparent 55%),
+        radial-gradient(900px 420px at 80% -10%, rgba(245,179,1,.12), transparent 60%),
+        radial-gradient(900px 520px at 0% 0%, rgba(31,122,62,.10), transparent 55%),
         var(--bg);
     }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
-    .glass{
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
 
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* NAVBAR */
     header{
       position:sticky; top:0; z-index:50;
-      background: rgba(7,10,18,.58);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(246,247,251,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap:14px;}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.5px;}
-    .logo{width:36px;height:36px;border-radius:14px; background: conic-gradient(from 220deg, var(--brand1), var(--brand2), var(--brand3), var(--brand1));}
-    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:18px; align-items:center;}
-    nav a{color:var(--muted); font-weight:900; font-size:14px;}
-    nav a:hover{color:var(--text)}
-    .right{display:flex; align-items:center; gap:10px;}
+
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap: 14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .mark{
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), #34D399);
+      box-shadow: 0 6px 18px rgba(31,122,62,.20);
+    }
+
+    .brandText{
+      display:flex; flex-direction:column; line-height: 1.05;
+    }
+
+    .brandText .top{
+      font-size: 12px; color: var(--muted); font-weight: 600;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+
+    .brandText .main{
+      font-size: 16px; font-weight: 800;
+    }
+
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap: 18px; align-items:center;
+    }
+
+    nav a{
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    nav a:hover{ color: var(--text); }
+
+    .right{
+      display:flex; align-items:center; gap: 10px;
+    }
+
     .btn{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      padding:10px 14px;
-      border-radius: 14px;
-      font-weight:900;
-      font-size:14px;
-      cursor:pointer;
-      transition: transform .15s ease, background .15s ease;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
       color: var(--text);
-      display:inline-flex; align-items:center; gap:8px;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow: 0 6px 16px rgba(15,23,42,.05);
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10);}
-    .btn.primary{border:none; background: linear-gradient(90deg, var(--brand1), var(--brand2)); color:#0b0f17;}
-    .burger{display:none; width:44px; height:44px; border-radius:14px; align-items:center; justify-content:center;}
-    .burger span{display:block; width:18px; height:2px; background:var(--text); position:relative;}
-    .burger span:before,.burger span:after{content:""; position:absolute; left:0; width:18px; height:2px; background:var(--text);}
-    .burger span:before{top:-6px}
-    .burger span:after{top:6px}
-    .mobileMenu{display:none; padding: 0 0 14px;}
-    .mobileMenu a{display:block; padding: 10px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); font-weight:900;}
-    .mobileMenu.show{display:block;}
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15,23,42,.08);
+    }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--brand), #27C06A);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(31,122,62,.22);
+    }
+    .btn.ghost{
+      background: transparent;
+      box-shadow: none;
+    }
 
-    .langWrap{position:relative;}
-    .langBtn{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); cursor:pointer; font-weight:900;}
-    .langBtn small{color:var(--muted); font-weight:900;}
-    .caret{width:8px; height:8px; border-right:2px solid rgba(234,240,255,.75); border-bottom:2px solid rgba(234,240,255,.75); transform: rotate(45deg);}
-    .langMenu{position:absolute; right:0; top: calc(100% + 10px); min-width:180px; border-radius:16px; border:1px solid rgba(255,255,255,.12); background: rgba(7,10,18,.78); box-shadow: var(--shadow); overflow:hidden; display:none;}
-    .langMenu.show{display:block;}
-    .langItem{width:100%; display:flex; justify-content:space-between; align-items:center; padding:12px; border:none; background:transparent; color:var(--text); cursor:pointer; font-weight:900; text-align:left;}
-    .langItem:hover{background: rgba(255,255,255,.08);}
-    .tag{font-size:12px; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:3px 8px; border-radius:999px; background: rgba(255,255,255,.04); font-weight:900;}
+    /* Language dropdown */
+    .langWrap{ position:relative; }
+    .langBtn{
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      cursor:pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(15,23,42,.05);
+    }
+    .langBtn small{ color: var(--muted); font-weight: 600; }
+    .caret{
+      width:8px; height:8px;
+      border-right: 2px solid rgba(15,23,42,.55);
+      border-bottom: 2px solid rgba(15,23,42,.55);
+      transform: rotate(45deg);
+      margin-left: 2px;
+    }
+    .langMenu{
+      position:absolute; right:0; top: calc(100% + 10px);
+      min-width: 190px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:none;
+    }
+    .langMenu.show{ display:block; }
+    .langItem{
+      width:100%;
+      padding: 12px 12px;
+      background: transparent;
+      border:none;
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:space-between;
+      font-weight: 700;
+    }
+    .langItem:hover{ background: var(--soft); }
+    .tag{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(15,23,42,.03);
+    }
 
-    section{padding: 60px 0;}
-    h1{margin:0 0 10px; font-size: clamp(34px, 4vw, 56px); letter-spacing:-.6px;}
-    h2{margin:0 0 10px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing:-.3px;}
-    .lead{color:var(--muted); line-height:1.65; font-weight:900; max-width:78ch; margin:0 0 16px;}
-
+    /* HERO */
+    section{ padding: 56px 0; }
     .hero{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 14px;
-      align-items: stretch;
-    }
-    .heroCard{
-      padding:22px;
-      border-radius: var(--radius2);
-      position:relative;
-      overflow:hidden;
-    }
-    .heroCard:before{
-      content:"";
-      position:absolute; inset:-40px;
-      background:
-        radial-gradient(360px 260px at 20% 25%, rgba(255,176,0,.18), transparent 60%),
-        radial-gradient(340px 260px at 85% 20%, rgba(0,212,255,.12), transparent 62%),
-        radial-gradient(300px 240px at 55% 95%, rgba(53,208,127,.12), transparent 62%);
-      filter: blur(8px);
-    }
-    .heroCard > *{position:relative; z-index:1;}
-
-    .heroSide{
-      padding:22px;
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      position:relative;
-      overflow:hidden;
-    }
-    .heroSide:before{
-      content:"";
-      position:absolute; inset:-30px;
-      background: radial-gradient(300px 220px at 30% 30%, rgba(0,212,255,.10), transparent 60%);
-      filter: blur(8px);
-    }
-    .heroSide > *{position:relative; z-index:1;}
-
-    .badge{display:inline-flex; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); color:var(--muted); font-weight:900; font-size:12px;}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.86);
-      font-weight:1000;
-      font-size:12px;
-    }
-    .dot2{
-      width:8px; height:8px; border-radius:99px;
-      background: radial-gradient(circle at 30% 30%, #fff, var(--brand2));
-      box-shadow: 0 0 0 4px rgba(53,208,127,.10);
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items:center;
     }
 
-    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:14px;}
-    .card{padding:18px; border-radius: var(--radius2); border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); position:relative; overflow:hidden;}
-    .card h3{margin:10px 0 6px; font-size:16px;}
-    .card p{margin:0; color:var(--muted); line-height:1.6; font-weight:900;}
-    .miniTitle{color:rgba(234,240,255,.92); font-weight:1000;}
+    .heroLeft{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(31,122,62,.06);
+      color: var(--brandDark);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 3.3vw, 46px);
+      letter-spacing: -0.6px;
+      line-height: 1.08;
+      font-weight: 800;
+    }
+
+    .lead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 500;
+      max-width: 70ch;
+      font-size: 15px;
+    }
+
+    .pillRow{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      margin: 14px 0 18px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(15,23,42,.03);
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .dot{
+      width: 9px; height: 9px; border-radius: 99px;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(31,122,62,.12);
+    }
+
+    .heroActions{ display:flex; gap: 10px; flex-wrap:wrap; }
+
+    .heroRight{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .heroRight h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .heroRight p{
+      margin: 0;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .miniCards{
+      display:grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .mini{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(15,23,42,.02);
+    }
+    .mini b{
+      display:block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    /* SECTIONS */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card small{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(15,23,42,.03);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .card h2{
+      margin: 10px 0 8px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing:-.2px;
+    }
+
+    .card p{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 500;
+      font-size: 14px;
+    }
 
     .split{
       display:grid;
       grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .list{
+      list-style:none;
+      padding: 0;
+      margin: 12px 0 0;
+      display:grid;
+      gap: 10px;
+    }
+    .list li{
+      display:flex; gap: 10px; align-items:flex-start;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+    .tick{
+      width:18px; height:18px;
+      border-radius: 6px;
+      border: 1px solid rgba(31,122,62,.30);
+      background: rgba(31,122,62,.10);
+      position:relative;
+      flex:0 0 auto;
+      margin-top: 2px;
+    }
+    .tick:after{
+      content:"";
+      position:absolute;
+      left:5px; top:4px;
+      width:7px; height:4px;
+      border-left:2px solid var(--brand);
+      border-bottom:2px solid var(--brand);
+      transform: rotate(-45deg);
+    }
+
+    footer{
+      padding: 26px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
       gap: 14px;
+      flex-wrap:wrap;
     }
+    .links{ display:flex; gap: 14px; flex-wrap:wrap; }
+    .links a{ color: var(--muted); font-weight: 600; }
+    .links a:hover{ color: var(--text); }
 
-    .list{margin:0; padding:0; list-style:none; display:grid; gap:10px;}
-    .list li{display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-weight:900; line-height:1.55;}
-    .tick{width:18px;height:18px;border-radius:6px; background: rgba(255,176,0,.14); border:1px solid rgba(255,176,0,.35); flex:0 0 auto; margin-top:2px; position:relative;}
-    .tick:after{content:""; position:absolute; left:5px; top:4px; width:7px; height:4px; border-left:2px solid #ffe4a3; border-bottom:2px solid #ffe4a3; transform: rotate(-45deg);}
-
-    footer{padding: 26px 0 40px; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-weight:900;}
-    .foot{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;}
-    .links{display:flex; gap:14px; flex-wrap:wrap;}
-    .links a:hover{color:var(--text);}
-
-    .reveal{opacity:0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease;}
-    .reveal.show{opacity:1; transform: translateY(0);}
-
+    /* WhatsApp floating */
     .wa{
-      position: fixed; right:18px; bottom:18px; z-index:9999;
-      display:flex; align-items:center; gap:10px;
-      padding: 12px 14px; border-radius: 999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(7,10,18,.78);
-      backdrop-filter: blur(12px);
+      position: fixed; right: 18px; bottom: 18px;
+      display:flex; align-items:center; gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
       box-shadow: var(--shadow);
-      transition: transform .15s ease, background .15s ease;
+      z-index: 9999;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .wa:hover{transform: translateY(-1px); background: rgba(255,255,255,.08);}
-    .waIcon{width:34px; height:34px; border-radius:14px; display:grid; place-items:center; background: rgba(53,208,127,.16); border:1px solid rgba(53,208,127,.40); font-weight:1000;}
-    .waText b{font-size:13px;}
-    .waText small{font-size:12px; color:var(--muted); font-weight:900;}
+    .wa:hover{ transform: translateY(-1px); box-shadow: 0 12px 30px rgba(15,23,42,.10); }
+    .waIcon{
+      width: 36px; height: 36px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(31,122,62,.12);
+      color: var(--brandDark);
+      font-weight: 800;
+    }
+    .waText b{ font-size: 13px; }
+    .waText small{ font-size: 12px; color: var(--muted); }
 
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr;}
-      .grid3{grid-template-columns:1fr;}
-      .split{grid-template-columns:1fr;}
+    /* Mobile */
+    .burger{ display:none; }
+    .mobileMenu{ display:none; }
+
+    @media(max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
     }
-    @media (max-width: 760px){
-      nav ul{display:none;}
-      .burger{display:flex;}
-      .waText{display:none;}
-      .wa{padding:12px;}
+    @media(max-width: 760px){
+      nav ul{ display:none; }
+      .burger{ display:inline-flex; }
+      .waText{ display:none; }
     }
   </style>
 </head>
@@ -205,9 +430,13 @@
 <header>
   <div class="container">
     <div class="nav">
+
       <a class="brand" href="index.html">
-        <span class="logo" aria-hidden="true"></span>
-        <span>YASOU</span>
+        <span class="mark" aria-hidden="true"></span>
+        <span class="brandText">
+          <span class="top">UFOODS</span>
+          <span class="main">YASOU</span>
+        </span>
       </a>
 
       <nav>
@@ -232,17 +461,9 @@
             <button class="langItem" type="button" data-lang="de">Deutsch <span class="tag">DE</span></button>
           </div>
         </div>
-
         <a class="btn primary" href="#contact" data-i18n="cta_contact">İletişime Geç</a>
-        <button class="btn burger" id="burger" aria-label="Menü"><span></span></button>
       </div>
-    </div>
 
-    <div class="mobileMenu" id="mobileMenu">
-      <a href="products.html" data-i18n="nav_products">Ürünler</a>
-      <a href="#about" data-i18n="nav_about">Hakkımızda</a>
-      <a href="#mission" data-i18n="nav_mission">Misyon & Vizyon</a>
-      <a href="#contact" data-i18n="nav_contact">İletişim</a>
     </div>
   </div>
 </header>
@@ -253,67 +474,63 @@
   <section>
     <div class="container">
       <div class="hero">
-        <div class="heroCard glass reveal">
-          <span class="badge" data-i18n="hero_badge">UFOODS • YASOU</span>
+        <div class="heroLeft">
+          <span class="kicker" data-i18n="hero_badge">UFOODS • YASOU</span>
           <h1 data-i18n="hero_title">Germany Wholesale Ready Fine Foods</h1>
           <p class="lead" data-i18n="hero_lead">
             Almanya içi toptancılar ve marketler için planlı tedarik. Güvenilir kalite, istikrarlı sevkiyat ve güçlü iş ortaklığı.
           </p>
 
-          <div class="chips">
-            <span class="chip"><span class="dot2"></span><span data-i18n="chip_market">Hedef: DE Toptancı & Market</span></span>
-            <span class="chip"><span class="dot2"></span><span data-i18n="chip_exp">15+ yıl deneyim</span></span>
-            <span class="chip"><span class="dot2"></span><span data-i18n="chip_supply">Planlı tedarik</span></span>
+          <div class="pillRow">
+            <span class="pill"><span class="dot"></span><span data-i18n="chip_market">Hedef: DE Toptancı & Market</span></span>
+            <span class="pill"><span class="dot"></span><span data-i18n="chip_exp">15+ yıl deneyim</span></span>
+            <span class="pill"><span class="dot"></span><span data-i18n="chip_supply">Planlı tedarik</span></span>
           </div>
 
-          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <div class="heroActions">
             <a class="btn primary" href="products.html" data-i18n="cta_products">Ürünleri Gör</a>
             <a class="btn" id="waInlineTop" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
           </div>
         </div>
 
-        <div class="heroSide glass reveal">
-          <span class="badge" data-i18n="focus_badge">Odak Ürün</span>
-          <div style="margin-top:10px;">
-            <div class="miniTitle" data-i18n="focus_title">Asma Yaprağı</div>
-            <p style="margin:6px 0 0; color:var(--muted); font-weight:900; line-height:1.6" data-i18n="focus_desc">
-              Kavanoz 1062cc (454g süzme) ve vakum seçenekleri ile market & toptancı kanalına uygun tedarik.
-            </p>
-          </div>
+        <div class="heroRight">
+          <h3 data-i18n="focus_title">Asma Yaprağı</h3>
+          <p data-i18n="focus_desc">
+            Kavanoz 1062cc (454g süzme) ve vakum seçenekleri ile market & toptancı kanalına uygun tedarik.
+          </p>
 
-          <div style="margin-top:14px; display:grid; gap:10px;">
-            <div class="card glass" style="padding:14px;">
-              <div class="miniTitle" data-i18n="focus_point1_t">B2B yaklaşım</div>
+          <div class="miniCards">
+            <div class="mini">
+              <b data-i18n="focus_point1_t">B2B yaklaşım</b>
               <p data-i18n="focus_point1_d">Teklif bazlı çalışma, düzenli sevkiyat planı.</p>
             </div>
-            <div class="card glass" style="padding:14px;">
-              <div class="miniTitle" data-i18n="focus_point2_t">Tutarlılık</div>
+            <div class="mini">
+              <b data-i18n="focus_point2_t">Tutarlılık</b>
               <p data-i18n="focus_point2_d">Standart ürün spesifikasyonu ile sürdürülebilir kalite.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- QUICK CARDS -->
+      <!-- Highlights -->
       <div class="grid3">
-        <div class="card glass reveal">
-          <span class="badge" data-i18n="q1_badge">Ürün</span>
-          <h3 data-i18n="q1_title">Çeşitlilik</h3>
+        <div class="card">
+          <small data-i18n="q1_badge">Ürün</small>
+          <h2 data-i18n="q1_title">Çeşitlilik</h2>
           <p data-i18n="q1_desc">Şu an odakta asma yaprağı var. Kısa zamanda portföy genişleyecek.</p>
         </div>
-
-        <div class="card glass reveal">
-          <span class="badge" data-i18n="q2_badge">Pazar</span>
-          <h3 data-i18n="q2_title">Almanya</h3>
+        <div class="card">
+          <small data-i18n="q2_badge">Pazar</small>
+          <h2 data-i18n="q2_title">Almanya</h2>
           <p data-i18n="q2_desc">Toptancılar ve market zincirleri için uygun operasyon ve iletişim.</p>
         </div>
-
-        <div class="card glass reveal">
-          <span class="badge" data-i18n="q3_badge">İletişim</span>
-          <h3 data-i18n="q3_title">Hızlı Teklif</h3>
+        <div class="card">
+          <small data-i18n="q3_badge">İletişim</small>
+          <h2 data-i18n="q3_title">Hızlı Teklif</h2>
           <p data-i18n="q3_desc">WhatsApp ile direkt fiyat ve teslimat detaylarını isteyin.</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -321,15 +538,17 @@
   <section id="about">
     <div class="container">
       <div class="split">
-        <div class="card glass reveal">
+        <div class="card">
+          <small data-i18n="nav_about">Hakkımızda</small>
           <h2 data-i18n="about_title">Hakkımızda</h2>
-          <p class="lead" data-i18n="about_text">
+          <p data-i18n="about_text">
             UFOODS olarak 15 yılı aşkın deneyimimizle gıda sektöründe güvenilir ve sürdürülebilir tedarik çözümleri sunuyoruz.
             YASOU markamız ile Almanya’da toptancılar ve marketler için planlı sevkiyat, istikrarlı kalite ve profesyonel iş birliği hedefliyoruz.
           </p>
         </div>
 
-        <div class="card glass reveal">
+        <div class="card">
+          <small data-i18n="about_highlight_title">Neden YASOU?</small>
           <h2 data-i18n="about_highlight_title">Neden YASOU?</h2>
           <ul class="list">
             <li><span class="tick"></span><span data-i18n="why_1">B2B odaklı iletişim ve teklif bazlı çalışma</span></li>
@@ -345,15 +564,17 @@
   <section id="mission">
     <div class="container">
       <div class="split">
-        <div class="card glass reveal">
+        <div class="card">
+          <small data-i18n="mission_title">Misyonumuz</small>
           <h2 data-i18n="mission_title">Misyonumuz</h2>
-          <p class="lead" data-i18n="mission_text">
+          <p data-i18n="mission_text">
             Almanya içi toptancılar ve marketler için yüksek kalite standardında, planlı ve sürdürülebilir gıda tedariki sağlamak.
           </p>
         </div>
-        <div class="card glass reveal">
+        <div class="card">
+          <small data-i18n="vision_title">Vizyonumuz</small>
           <h2 data-i18n="vision_title">Vizyonumuz</h2>
-          <p class="lead" data-i18n="vision_text">
+          <p data-i18n="vision_text">
             YASOU markasını Avrupa pazarında güvenilir bir fine foods tedarikçisi olarak konumlandırmak ve ürün çeşitliliğini büyütmek.
           </p>
         </div>
@@ -365,23 +586,17 @@
   <section id="contact">
     <div class="container">
       <div class="split">
-        <div class="card glass reveal">
+        <div class="card">
+          <small data-i18n="contact_title">İletişim</small>
           <h2 data-i18n="contact_title">İletişim</h2>
-          <p class="lead" data-i18n="contact_text">
+          <p data-i18n="contact_text">
             Teklif ve iş birliği talepleriniz için bize ulaşın. En hızlı dönüş WhatsApp üzerinden yapılır.
           </p>
 
-          <div style="display:grid; gap:10px; margin-top:10px;">
-            <div class="card glass" style="padding:14px;">
-              <div class="miniTitle" data-i18n="contact_phone_t">Telefon / WhatsApp</div>
-              <p style="margin:4px 0 0; color:var(--muted); font-weight:900;">+90 532 265 96 26</p>
-            </div>
-
-            <div class="card glass" style="padding:14px;">
-              <div class="miniTitle" data-i18n="contact_mail_t">E-Posta</div>
-              <p style="margin:4px 0 0; color:var(--muted); font-weight:900;">m.han@ufoods.de</p>
-            </div>
-          </div>
+          <ul class="list">
+            <li><span class="tick"></span><span><b data-i18n="contact_phone_t">Telefon / WhatsApp</b>: +90 532 265 96 26</span></li>
+            <li><span class="tick"></span><span><b data-i18n="contact_mail_t">E-Posta</b>: m.han@ufoods.de</span></li>
+          </ul>
 
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn primary" id="waInline" href="#" target="_blank" rel="noopener" data-i18n="contact_btn_wa">WhatsApp’tan yaz</a>
@@ -389,12 +604,12 @@
           </div>
         </div>
 
-        <div class="card glass reveal">
+        <div class="card">
+          <small data-i18n="contact_note_title">Not</small>
           <h2 data-i18n="contact_note_title">Not</h2>
-          <p class="lead" data-i18n="contact_note">
+          <p data-i18n="contact_note">
             Şu an ürün kataloğu tek ürün üzerinden ilerliyor. Çok yakında ürün çeşitliliği artacaktır.
           </p>
-
           <ul class="list">
             <li><span class="tick"></span><span data-i18n="note_1">Toptan fiyatlar teklif bazlı paylaşılır</span></li>
             <li><span class="tick"></span><span data-i18n="note_2">Sevkiyat detayları sipariş planına göre netleştirilir</span></li>
@@ -410,11 +625,11 @@
 <footer>
   <div class="container">
     <div class="foot">
-      <div class="brand" style="gap:10px">
-        <span class="logo" aria-hidden="true"></span>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <span class="mark" aria-hidden="true"></span>
         <div>
-          <div style="font-weight:1000;color:var(--text)">YASOU</div>
-          <div style="font-size:13px;">© <span id="year"></span> • ufoods.de</div>
+          <div style="font-weight:800;">YASOU</div>
+          <div>© <span id="year"></span> • ufoods.de</div>
         </div>
       </div>
       <div class="links">
@@ -458,7 +673,6 @@
       cta_products: "Ürünleri Gör",
       cta_whatsapp: "WhatsApp’tan yaz",
 
-      focus_badge: "Odak Ürün",
       focus_title: "Asma Yaprağı",
       focus_desc: "Kavanoz 1062cc (454g süzme) ve vakum seçenekleri ile market & toptancı kanalına uygun tedarik.",
       focus_point1_t: "B2B yaklaşım",
@@ -517,7 +731,6 @@
       cta_products: "View Products",
       cta_whatsapp: "Message on WhatsApp",
 
-      focus_badge: "Focus Product",
       focus_title: "Vine Leaves",
       focus_desc: "Jar 1062cc (454g drained) and vacuum options suitable for retail & wholesale channels.",
       focus_point1_t: "B2B approach",
@@ -576,7 +789,6 @@
       cta_products: "Produkte ansehen",
       cta_whatsapp: "WhatsApp schreiben",
 
-      focus_badge: "Fokus Produkt",
       focus_title: "Weinblätter",
       focus_desc: "Glas 1062cc (Abtropfgewicht 454g) und Vakuumoptionen für Retail- und Großhandelskanäle.",
       focus_point1_t: "B2B Ansatz",
@@ -647,21 +859,6 @@
     document.getElementById("waInlineTop").href = link;
   }
 
-  // reveal
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(ent=>{ if(ent.isIntersecting) ent.target.classList.add('show'); });
-  }, {threshold: 0.12});
-  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
-
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // mobile menu
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger?.addEventListener('click', () => mobileMenu.classList.toggle('show'));
-
-  // language menu
   const langBtn = document.getElementById("langBtn");
   const langMenu = document.getElementById("langMenu");
   function closeLangMenu(){
@@ -682,8 +879,9 @@
     });
   });
 
-  // init
+  document.getElementById('year').textContent = new Date().getFullYear();
   applyLang(getInitialLang());
 </script>
+
 </body>
 </html>
