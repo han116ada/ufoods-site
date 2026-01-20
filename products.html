@@ -3,220 +3,372 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products • YASOU • ufoods.de</title>
-  <meta name="description" content="YASOU products: Vine Leaves (1062cc jar, 454g drained; 350g/700g vacuum). TR/EN/DE." />
-  <link rel="canonical" href="https://www.ufoods.de/products.html" />
+  <title>YASOU • Products • ufoods.de</title>
+  <meta name="description" content="YASOU Vine Leaves — jar and vacuum packaging. Wholesale-ready for Germany. TR/EN/DE." />
+
+  <!-- Corporate font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#070A12; --text:#EAF0FF; --muted:rgba(234,240,255,.72);
-      --line:rgba(255,255,255,.12);
-      --brand1:#FFB000; --brand2:#35D07F; --brand3:#00D4FF;
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius: 18px; --radius2: 28px; --max: 1180px;
+      --bg: #F6F7FB;
+      --card: #FFFFFF;
+      --text: #0F172A;
+      --muted: #475569;
+      --line: rgba(15,23,42,.10);
+      --soft: rgba(15,23,42,.04);
+
+      --brand: #1F7A3E;
+      --brand2: #F5B301;
+      --brandDark: #0E3B1E;
+
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15,23,42,.08);
+      --max: 1140px;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% 0%, rgba(255,176,0,.22), transparent 60%),
-        radial-gradient(900px 600px at 85% 10%, rgba(0,212,255,.18), transparent 55%),
-        radial-gradient(700px 500px at 55% 95%, rgba(53,208,127,.16), transparent 55%),
+        radial-gradient(900px 420px at 80% -10%, rgba(245,179,1,.12), transparent 60%),
+        radial-gradient(900px 520px at 0% 0%, rgba(31,122,62,.10), transparent 55%),
         var(--bg);
     }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
-    .glass{
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
 
+    /* NAVBAR */
     header{
       position:sticky; top:0; z-index:50;
-      background: rgba(7,10,18,.58);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(246,247,251,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap:14px;}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.5px;}
-    .logo{width:36px;height:36px;border-radius:14px; background: conic-gradient(from 220deg, var(--brand1), var(--brand2), var(--brand3), var(--brand1));}
-    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:18px; align-items:center;}
-    nav a{color:var(--muted); font-weight:900; font-size:14px;}
-    nav a:hover{color:var(--text)}
-    .right{display:flex; align-items:center; gap:10px;}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .mark{
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), #34D399);
+      box-shadow: 0 6px 18px rgba(31,122,62,.20);
+    }
+    .brandText{ display:flex; flex-direction:column; line-height: 1.05; }
+    .brandText .top{
+      font-size: 12px; color: var(--muted); font-weight: 600;
+      letter-spacing: .6px; text-transform: uppercase;
+    }
+    .brandText .main{ font-size: 16px; font-weight: 800; }
+
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap: 18px; align-items:center;
+    }
+    nav a{
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    nav a:hover{ color: var(--text); }
+
+    .right{ display:flex; align-items:center; gap: 10px; }
+
     .btn{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      padding:10px 14px;
-      border-radius: 14px;
-      font-weight:900;
-      font-size:14px;
-      cursor:pointer;
-      transition: transform .15s ease, background .15s ease;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
       color: var(--text);
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow: 0 6px 16px rgba(15,23,42,.05);
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10);}
-    .btn.primary{border:none; background: linear-gradient(90deg, var(--brand1), var(--brand2)); color:#0b0f17;}
-    .burger{display:none; width:44px; height:44px; border-radius:14px; align-items:center; justify-content:center;}
-    .burger span{display:block; width:18px; height:2px; background:var(--text); position:relative;}
-    .burger span:before,.burger span:after{content:""; position:absolute; left:0; width:18px; height:2px; background:var(--text);}
-    .burger span:before{top:-6px}
-    .burger span:after{top:6px}
-    .mobileMenu{display:none; padding: 0 0 14px;}
-    .mobileMenu a{display:block; padding: 10px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); font-weight:900;}
-    .mobileMenu.show{display:block;}
-
-    .langWrap{position:relative;}
-    .langBtn{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); cursor:pointer; font-weight:900;}
-    .langBtn small{color:var(--muted); font-weight:900;}
-    .caret{width:8px; height:8px; border-right:2px solid rgba(234,240,255,.75); border-bottom:2px solid rgba(234,240,255,.75); transform: rotate(45deg);}
-    .langMenu{position:absolute; right:0; top: calc(100% + 10px); min-width:180px; border-radius:16px; border:1px solid rgba(255,255,255,.12); background: rgba(7,10,18,.78); box-shadow: var(--shadow); overflow:hidden; display:none;}
-    .langMenu.show{display:block;}
-    .langItem{width:100%; display:flex; justify-content:space-between; align-items:center; padding:12px; border:none; background:transparent; color:var(--text); cursor:pointer; font-weight:900; text-align:left;}
-    .langItem:hover{background: rgba(255,255,255,.08);}
-    .tag{font-size:12px; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:3px 8px; border-radius:999px; background: rgba(255,255,255,.04); font-weight:900;}
-
-    section{padding: 46px 0;}
-    h1{margin:0 0 10px; font-size: clamp(30px, 3.4vw, 46px); letter-spacing:-.6px;}
-    .lead{color:var(--muted); line-height:1.65; font-weight:900; max-width:78ch; margin:0 0 14px;}
-
-    /* HERO (text + image) */
-    .prodHero{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 14px;
-      align-items: stretch;
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15,23,42,.08);
     }
-    .heroCard{
-      padding:18px;
-      border-radius: var(--radius2);
-      position:relative;
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--brand), #27C06A);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(31,122,62,.22);
+    }
+
+    /* Language dropdown */
+    .langWrap{ position:relative; }
+    .langBtn{
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      cursor:pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(15,23,42,.05);
+    }
+    .langBtn small{ color: var(--muted); font-weight: 600; }
+    .caret{
+      width:8px; height:8px;
+      border-right: 2px solid rgba(15,23,42,.55);
+      border-bottom: 2px solid rgba(15,23,42,.55);
+      transform: rotate(45deg);
+      margin-left: 2px;
+    }
+    .langMenu{
+      position:absolute; right:0; top: calc(100% + 10px);
+      min-width: 190px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
       overflow:hidden;
+      display:none;
     }
-    .heroCard:before{
-      content:"";
-      position:absolute; inset:-40px;
-      background:
-        radial-gradient(360px 260px at 20% 25%, rgba(255,176,0,.18), transparent 60%),
-        radial-gradient(340px 260px at 85% 20%, rgba(0,212,255,.12), transparent 62%),
-        radial-gradient(300px 240px at 55% 95%, rgba(53,208,127,.12), transparent 62%);
-      filter: blur(8px);
+    .langMenu.show{ display:block; }
+    .langItem{
+      width:100%;
+      padding: 12px 12px;
+      background: transparent;
+      border:none;
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:space-between;
+      font-weight: 700;
     }
-    .heroCard > *{position:relative; z-index:1;}
-    .heroImageWrap{
-      padding:18px;
-      border-radius: var(--radius2);
+    .langItem:hover{ background: var(--soft); }
+    .tag{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(15,23,42,.03);
+    }
+
+    /* PAGE */
+    section{ padding: 56px 0; }
+
+    .pageTitle{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 18px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(28px, 3vw, 40px);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .sub{
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 500;
+      font-size: 15px;
+      max-width: 75ch;
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 14px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(31,122,62,.06);
+      color: var(--brandDark);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .pillRow{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      margin: 14px 0 0;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(15,23,42,.03);
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .dot{
+      width: 9px; height: 9px; border-radius: 99px;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(31,122,62,.12);
+    }
+
+    /* Image frame */
+    .imgFrame{
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 16px;
       display:flex;
       align-items:center;
       justify-content:center;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+      min-height: 360px;
     }
-    .heroImage{
-      width:100%;
+    .imgFrame img{
+      width: 100%;
       max-width: 520px;
-      height:auto;
+      height: auto;
+      object-fit: contain;
       display:block;
-      border-radius: 18px;
-      background:#fff;
-      box-shadow: 0 18px 55px rgba(0,0,0,.35);
     }
 
-    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px;}
-    .card{padding:18px; border-radius: var(--radius2); border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); position:relative; overflow:hidden;}
-    .badge{display:inline-flex; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); color:var(--muted); font-weight:900; font-size:12px;}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.86);
-      font-weight:1000;
-      font-size:12px;
+    /* Specs */
+    .specGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
     }
-    .dot2{
-      width:8px; height:8px; border-radius:99px;
-      background: radial-gradient(circle at 30% 30%, #fff, var(--brand2));
-      box-shadow: 0 0 0 4px rgba(53,208,127,.10);
-    }
-    .card h2{margin:10px 0 6px; font-size:16px;}
-    .card p{margin:0; color:var(--muted); line-height:1.6; font-weight:900;}
-    .bullets{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:10px;}
-    .bullets li{display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-weight:900; line-height:1.55;}
-    .tick{width:18px;height:18px;border-radius:6px; background: rgba(255,176,0,.14); border:1px solid rgba(255,176,0,.35); flex:0 0 auto; margin-top:2px; position:relative;}
-    .tick:after{content:""; position:absolute; left:5px; top:4px; width:7px; height:4px; border-left:2px solid #ffe4a3; border-bottom:2px solid #ffe4a3; transform: rotate(-45deg);}
 
-    .spec{
-      margin-top:12px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
+    .specTitle{
+      font-size: 16px;
+      font-weight: 800;
+      margin: 0 0 8px;
+    }
+
+    .specText{
+      margin:0;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 14px;
       overflow:hidden;
-      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      border: 1px solid var(--line);
     }
-    .specRow{
-      display:flex; justify-content:space-between; gap:14px;
-      padding: 11px 12px;
-      border-top:1px solid rgba(255,255,255,.08);
-      font-weight:900;
+    .table th, .table td{
+      padding: 12px;
+      text-align:left;
+      font-size: 14px;
     }
-    .specRow:first-child{border-top:none;}
-    .specRow span{color:var(--muted);}
-    .specRow b{color:rgba(234,240,255,.92);}
+    .table th{
+      background: rgba(15,23,42,.03);
+      color: var(--muted);
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+    }
+    .table td{
+      border-bottom: 1px solid rgba(15,23,42,.06);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .table tr:last-child td{ border-bottom:none; }
 
-    footer{padding: 26px 0 40px; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-weight:900;}
-    .foot{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;}
-    .links{display:flex; gap:14px; flex-wrap:wrap;}
-    .links a:hover{color:var(--text);}
+    /* Footer */
+    footer{
+      padding: 26px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .links{ display:flex; gap: 14px; flex-wrap:wrap; }
+    .links a{ color: var(--muted); font-weight: 600; }
+    .links a:hover{ color: var(--text); }
 
-    .reveal{opacity:0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease;}
-    .reveal.show{opacity:1; transform: translateY(0);}
-
+    /* WhatsApp floating */
     .wa{
-      position: fixed; right:18px; bottom:18px; z-index:9999;
-      display:flex; align-items:center; gap:10px;
-      padding: 12px 14px; border-radius: 999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(7,10,18,.78);
-      backdrop-filter: blur(12px);
+      position: fixed; right: 18px; bottom: 18px;
+      display:flex; align-items:center; gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
       box-shadow: var(--shadow);
-      transition: transform .15s ease, background .15s ease;
+      z-index: 9999;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .wa:hover{transform: translateY(-1px); background: rgba(255,255,255,.08);}
-    .waIcon{width:34px; height:34px; border-radius:14px; display:grid; place-items:center; background: rgba(53,208,127,.16); border:1px solid rgba(53,208,127,.40); font-weight:1000;}
-    .waText b{font-size:13px;}
-    .waText small{font-size:12px; color:var(--muted); font-weight:900;}
+    .wa:hover{ transform: translateY(-1px); box-shadow: 0 12px 30px rgba(15,23,42,.10); }
+    .waIcon{
+      width: 36px; height: 36px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(31,122,62,.12);
+      color: var(--brandDark);
+      font-weight: 800;
+    }
+    .waText b{ font-size: 13px; }
+    .waText small{ font-size: 12px; color: var(--muted); }
 
-    @media (max-width: 980px){
-      .grid2{grid-template-columns:1fr;}
-      .prodHero{grid-template-columns:1fr;}
-      .heroImage{max-width: 640px;}
+    @media(max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .specGrid{ grid-template-columns: 1fr; }
+      .imgFrame{ min-height: 280px; }
     }
-    @media (max-width: 760px){
-      nav ul{display:none;}
-      .burger{display:flex;}
-      .waText{display:none;}
-      .wa{padding:12px;}
+    @media(max-width: 760px){
+      nav ul{ display:none; }
+      .waText{ display:none; }
     }
   </style>
 </head>
 
 <body>
+
 <header>
   <div class="container">
     <div class="nav">
+
       <a class="brand" href="index.html">
-        <span class="logo" aria-hidden="true"></span>
-        <span>YASOU</span>
+        <span class="mark" aria-hidden="true"></span>
+        <span class="brandText">
+          <span class="top">UFOODS</span>
+          <span class="main">YASOU</span>
+        </span>
       </a>
 
       <nav>
@@ -242,16 +394,9 @@
           </div>
         </div>
 
-        <a class="btn primary" href="index.html#contact" data-i18n="cta_contact">İletişime Geç</a>
-        <button class="btn burger" id="burger" aria-label="Menü"><span></span></button>
+        <a class="btn primary" id="waTop" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
       </div>
-    </div>
 
-    <div class="mobileMenu" id="mobileMenu">
-      <a href="products.html" data-i18n="nav_products">Ürünler</a>
-      <a href="index.html#about" data-i18n="nav_about">Hakkımızda</a>
-      <a href="index.html#mission" data-i18n="nav_mission">Misyon & Vizyon</a>
-      <a href="index.html#contact" data-i18n="nav_contact">İletişim</a>
     </div>
   </div>
 </header>
@@ -260,80 +405,70 @@
   <section>
     <div class="container">
 
-      <!-- HERO: text + image -->
-      <div class="prodHero">
-        <div class="heroCard glass reveal">
-          <span class="badge" data-i18n="prod_badge">Ürünler</span>
+      <div class="pageTitle">
+        <div>
+          <span class="kicker" data-i18n="prod_kicker">Ürünler</span>
           <h1 data-i18n="prod_title">Asma Yaprağı</h1>
-          <p class="lead" data-i18n="prod_lead">
+          <p class="sub" data-i18n="prod_sub">
             Almanya içi toptancılar ve marketler için planlı tedarik. Ambalaj: 1062cc kavanoz ve 350g/700g vakum.
           </p>
 
-          <div class="chips">
-            <span class="chip"><span class="dot2"></span><span data-i18n="chip_market">Hedef: DE Toptancı & Market</span></span>
-            <span class="chip"><span class="dot2"></span><span data-i18n="chip_b2b">B2B • Teklif bazlı</span></span>
-          </div>
-
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" id="waInlineTop" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
-            <a class="btn" href="index.html#contact" data-i18n="cta_contact2">İletişim</a>
+          <div class="pillRow">
+            <span class="pill"><span class="dot"></span><span data-i18n="pill_market">Hedef: DE Toptancı & Market</span></span>
+            <span class="pill"><span class="dot"></span><span data-i18n="pill_b2b">B2B • Teklif bazlı</span></span>
           </div>
         </div>
 
-        <div class="heroImageWrap glass reveal">
-          <img
-            class="heroImage"
-            src="assets/yasou-jar-vacuum.png"
-            alt="YASOU vine leaves - jar and vacuum pack"
-            loading="lazy"
-          />
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="index.html#contact" data-i18n="cta_contact">İletişim</a>
+          <a class="btn primary" id="waInline" href="#" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp’tan yaz</a>
         </div>
       </div>
 
-      <!-- PRODUCT CARDS -->
-      <div class="grid2" style="margin-top:14px;">
-        <div class="card glass reveal">
-          <span class="badge" data-i18n="jar_badge">Ambalaj</span>
-          <h2 data-i18n="jar_title">Asma Yaprağı — Kavanoz</h2>
-          <p data-i18n="jar_desc">Perakende rafları ve toptan dağıtım için uygun, standardize spesifikasyon.</p>
-
-          <div class="spec" aria-label="spec table">
-            <div class="specRow"><span data-i18n="spec_volume">Hacim</span><b>1062 cc</b></div>
-            <div class="specRow"><span data-i18n="spec_drained">Süzme ağırlık</span><b>454 g</b></div>
+      <div class="heroGrid">
+        <div class="card">
+          <div class="imgFrame">
+            <img src="assets/yasou-jar-vacuum.png" alt="YASOU product photo">
           </div>
-
-          <ul class="bullets">
-            <li><span class="tick"></span><span data-i18n="jar_b1">Market raflarına uygun format</span></li>
-            <li><span class="tick"></span><span data-i18n="jar_b2">Toptancı dağıtımı için istikrarlı tedarik</span></li>
-            <li><span class="tick"></span><span data-i18n="jar_b3">Tutarlı kalite hedefi</span></li>
-          </ul>
         </div>
 
-        <div class="card glass reveal">
-          <span class="badge" data-i18n="vac_badge">Ambalaj</span>
-          <h2 data-i18n="vac_title">Asma Yaprağı — Vakum Torba</h2>
-          <p data-i18n="vac_desc">Pratik taşıma ve esnek sevkiyat için vakum torba seçenekleri.</p>
+        <div class="card">
+          <h3 style="margin:0 0 8px; font-size:18px; font-weight:800;" data-i18n="pack_title">Ambalaj Seçenekleri</h3>
+          <p class="specText" data-i18n="pack_desc">
+            Perakende rafları ve toptan dağıtım için uygun formatlar. Standart ürün spesifikasyonu ile sürdürülebilir kalite.
+          </p>
 
-          <div class="spec" aria-label="spec table">
-            <div class="specRow"><span data-i18n="spec_sizes">Ağırlık seçenekleri</span><b>350 g • 700 g</b></div>
+          <table class="table" aria-label="Packaging table">
+            <thead>
+              <tr>
+                <th data-i18n="th_type">Tip</th>
+                <th data-i18n="th_size">Boyut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="row_jar">Kavanoz</td>
+                <td data-i18n="row_jar_size">1062cc • 454g süzme ağırlık</td>
+              </tr>
+              <tr>
+                <td data-i18n="row_vac">Vakum Torba</td>
+                <td data-i18n="row_vac_size">350g ve 700g</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="specGrid">
+            <div style="border:1px solid var(--line); border-radius:14px; padding:14px; background: rgba(15,23,42,.02);">
+              <div class="specTitle" data-i18n="b2b_title">B2B Uyumlu</div>
+              <p class="specText" data-i18n="b2b_desc">Teklif bazlı fiyatlandırma ve planlı sevkiyat yaklaşımı.</p>
+            </div>
+
+            <div style="border:1px solid var(--line); border-radius:14px; padding:14px; background: rgba(15,23,42,.02);">
+              <div class="specTitle" data-i18n="quality_title">Tutarlı Kalite</div>
+              <p class="specText" data-i18n="quality_desc">Standart spesifikasyon ile güvenilir ürün deneyimi.</p>
+            </div>
           </div>
 
-          <ul class="bullets">
-            <li><span class="tick"></span><span data-i18n="vac_b1">Depolama ve sevkiyatta verimli yapı</span></li>
-            <li><span class="tick"></span><span data-i18n="vac_b2">İhtiyaca göre esnek sipariş</span></li>
-            <li><span class="tick"></span><span data-i18n="vac_b3">Market ve toptancı kanalına uygun</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card glass reveal" style="margin-top:14px;">
-        <h2 style="margin:0 0 6px;" data-i18n="cta2_title">Teklif & bilgi</h2>
-        <p style="margin:0; color:var(--muted); font-weight:900; line-height:1.6" data-i18n="cta2_desc">
-          Fiyat, koli/içerik ve teslimat detayları için WhatsApp üzerinden hızlıca yazabilirsiniz.
-        </p>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" id="waInline" href="#" target="_blank" rel="noopener" data-i18n="cta2_btn">WhatsApp’tan yaz</a>
-          <a class="btn" href="index.html#contact" data-i18n="cta2_btn2">İletişim</a>
         </div>
       </div>
 
@@ -344,17 +479,16 @@
 <footer>
   <div class="container">
     <div class="foot">
-      <div class="brand" style="gap:10px">
-        <span class="logo" aria-hidden="true"></span>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <span class="mark" aria-hidden="true"></span>
         <div>
-          <div style="font-weight:1000;color:var(--text)">YASOU</div>
-          <div style="font-size:13px;">© <span id="year"></span> • ufoods.de</div>
+          <div style="font-weight:800;">YASOU</div>
+          <div>© <span id="year"></span> • ufoods.de</div>
         </div>
       </div>
       <div class="links">
+        <a href="index.html" data-i18n="nav_home">Ana Sayfa</a>
         <a href="products.html" data-i18n="nav_products">Ürünler</a>
-        <a href="index.html#about" data-i18n="nav_about">Hakkımızda</a>
-        <a href="index.html#mission" data-i18n="nav_mission">Misyon & Vizyon</a>
         <a href="index.html#contact" data-i18n="nav_contact">İletişim</a>
       </div>
     </div>
@@ -376,130 +510,108 @@
 
   const I18N = {
     tr: {
-      lang_button: "Dil",
-      nav_products: "Ürünler",
-      nav_about: "Hakkımızda",
-      nav_mission: "Misyon & Vizyon",
-      nav_contact: "İletişim",
-      cta_contact: "İletişime Geç",
+      lang_button:"Dil",
+      nav_home:"Ana Sayfa",
+      nav_products:"Ürünler",
+      nav_about:"Hakkımızda",
+      nav_mission:"Misyon & Vizyon",
+      nav_contact:"İletişim",
 
-      prod_badge: "Ürünler",
-      prod_title: "Asma Yaprağı",
-      prod_lead: "Almanya içi toptancılar ve marketler için planlı tedarik. Ambalaj: 1062cc kavanoz ve 350g/700g vakum.",
-      chip_market: "Hedef: DE Toptancı & Market",
-      chip_b2b: "B2B • Teklif bazlı",
-      cta_whatsapp: "WhatsApp’tan yaz",
-      cta_contact2: "İletişim",
+      prod_kicker:"Ürünler",
+      prod_title:"Asma Yaprağı",
+      prod_sub:"Almanya içi toptancılar ve marketler için planlı tedarik. Ambalaj: 1062cc kavanoz ve 350g/700g vakum.",
+      pill_market:"Hedef: DE Toptancı & Market",
+      pill_b2b:"B2B • Teklif bazlı",
+      cta_contact:"İletişim",
+      cta_whatsapp:"WhatsApp’tan yaz",
 
-      jar_badge: "Ambalaj",
-      jar_title: "Asma Yaprağı — Kavanoz",
-      jar_desc: "Perakende rafları ve toptan dağıtım için uygun, standardize spesifikasyon.",
-      spec_volume: "Hacim",
-      spec_drained: "Süzme ağırlık",
-      jar_b1: "Market raflarına uygun format",
-      jar_b2: "Toptancı dağıtımı için istikrarlı tedarik",
-      jar_b3: "Tutarlı kalite hedefi",
+      pack_title:"Ambalaj Seçenekleri",
+      pack_desc:"Perakende rafları ve toptan dağıtım için uygun formatlar. Standart ürün spesifikasyonu ile sürdürülebilir kalite.",
+      th_type:"Tip",
+      th_size:"Boyut",
+      row_jar:"Kavanoz",
+      row_jar_size:"1062cc • 454g süzme ağırlık",
+      row_vac:"Vakum Torba",
+      row_vac_size:"350g ve 700g",
 
-      vac_badge: "Ambalaj",
-      vac_title: "Asma Yaprağı — Vakum Torba",
-      vac_desc: "Pratik taşıma ve esnek sevkiyat için vakum torba seçenekleri.",
-      spec_sizes: "Ağırlık seçenekleri",
-      vac_b1: "Depolama ve sevkiyatta verimli yapı",
-      vac_b2: "İhtiyaca göre esnek sipariş",
-      vac_b3: "Market ve toptancı kanalına uygun",
+      b2b_title:"B2B Uyumlu",
+      b2b_desc:"Teklif bazlı fiyatlandırma ve planlı sevkiyat yaklaşımı.",
+      quality_title:"Tutarlı Kalite",
+      quality_desc:"Standart spesifikasyon ile güvenilir ürün deneyimi.",
 
-      cta2_title: "Teklif & bilgi",
-      cta2_desc: "Fiyat, koli/içerik ve teslimat detayları için WhatsApp üzerinden hızlıca yazabilirsiniz.",
-      cta2_btn: "WhatsApp’tan yaz",
-      cta2_btn2: "İletişim",
-
-      wa_title: "WhatsApp",
-      wa_sub: "Hızlı iletişim",
-      wa_msg: "Merhaba, YASOU asma yaprağı için fiyat/teslimat bilgisi rica ederim. Kavanoz: 1062cc (454g süzme). Vakum: 350g ve 700g."
+      wa_title:"WhatsApp",
+      wa_sub:"Hızlı iletişim",
+      wa_msg:"Merhaba, YASOU / UFOODS Asma Yaprağı için fiyat ve teslimat bilgisi rica ederim."
     },
+
     en: {
-      lang_button: "Language",
-      nav_products: "Products",
-      nav_about: "About",
-      nav_mission: "Mission & Vision",
-      nav_contact: "Contact",
-      cta_contact: "Get in touch",
+      lang_button:"Language",
+      nav_home:"Home",
+      nav_products:"Products",
+      nav_about:"About",
+      nav_mission:"Mission & Vision",
+      nav_contact:"Contact",
 
-      prod_badge: "Products",
-      prod_title: "Vine Leaves",
-      prod_lead: "Planned supply for wholesalers and retail markets in Germany. Packaging: 1062cc jar and 350g/700g vacuum.",
-      chip_market: "Target: DE Wholesale & Retail",
-      chip_b2b: "B2B • Quote-based",
-      cta_whatsapp: "Message on WhatsApp",
-      cta_contact2: "Contact",
+      prod_kicker:"Products",
+      prod_title:"Vine Leaves",
+      prod_sub:"Planned supply for wholesalers and markets in Germany. Packaging: 1062cc jar and 350g/700g vacuum.",
+      pill_market:"Target: DE Wholesale & Retail",
+      pill_b2b:"B2B • Quote-based",
+      cta_contact:"Contact",
+      cta_whatsapp:"Message on WhatsApp",
 
-      jar_badge: "Packaging",
-      jar_title: "Vine Leaves — Jar",
-      jar_desc: "Standardized specs for retail shelves and wholesale distribution.",
-      spec_volume: "Volume",
-      spec_drained: "Drained weight",
-      jar_b1: "Retail-shelf friendly format",
-      jar_b2: "Stable supply for wholesale distribution",
-      jar_b3: "Consistency-driven quality",
+      pack_title:"Packaging Options",
+      pack_desc:"Formats suitable for retail shelves and wholesale distribution. Reliable quality with standard specifications.",
+      th_type:"Type",
+      th_size:"Size",
+      row_jar:"Jar",
+      row_jar_size:"1062cc • 454g drained weight",
+      row_vac:"Vacuum Bag",
+      row_vac_size:"350g and 700g",
 
-      vac_badge: "Packaging",
-      vac_title: "Vine Leaves — Vacuum Bag",
-      vac_desc: "Vacuum bag options for practical handling and flexible shipment.",
-      spec_sizes: "Weight options",
-      vac_b1: "Efficient for storage and shipping",
-      vac_b2: "Flexible ordering based on demand",
-      vac_b3: "Suitable for retail & wholesale channels",
+      b2b_title:"B2B Ready",
+      b2b_desc:"Quote-based pricing and planned shipment approach.",
+      quality_title:"Consistent Quality",
+      quality_desc:"Reliable experience with standard product specifications.",
 
-      cta2_title: "Quote & info",
-      cta2_desc: "For pricing, case details and delivery information, message us quickly via WhatsApp.",
-      cta2_btn: "Message on WhatsApp",
-      cta2_btn2: "Contact",
-
-      wa_title: "WhatsApp",
-      wa_sub: "Quick contact",
-      wa_msg: "Hello, please share pricing/delivery info for YASOU vine leaves. Jar: 1062cc (454g drained). Vacuum: 350g and 700g."
+      wa_title:"WhatsApp",
+      wa_sub:"Quick contact",
+      wa_msg:"Hello, I would like pricing and delivery information for YASOU / UFOODS Vine Leaves."
     },
+
     de: {
-      lang_button: "Sprache",
-      nav_products: "Produkte",
-      nav_about: "Über uns",
-      nav_mission: "Mission & Vision",
-      nav_contact: "Kontakt",
-      cta_contact: "Kontakt aufnehmen",
+      lang_button:"Sprache",
+      nav_home:"Startseite",
+      nav_products:"Produkte",
+      nav_about:"Über uns",
+      nav_mission:"Mission & Vision",
+      nav_contact:"Kontakt",
 
-      prod_badge: "Produkte",
-      prod_title: "Weinblätter",
-      prod_lead: "Geplante Lieferung für Großhändler und Märkte in Deutschland. Verpackung: 1062cc Glas und 350g/700g Vakuum.",
-      chip_market: "Ziel: DE Großhandel & Retail",
-      chip_b2b: "B2B • Angebotsbasiert",
-      cta_whatsapp: "WhatsApp schreiben",
-      cta_contact2: "Kontakt",
+      prod_kicker:"Produkte",
+      prod_title:"Weinblätter",
+      prod_sub:"Geplante Lieferung für Großhandel und Märkte in Deutschland. Verpackung: 1062cc Glas und 350g/700g Vakuum.",
+      pill_market:"Ziel: DE Großhandel & Retail",
+      pill_b2b:"B2B • Angebotsbasiert",
+      cta_contact:"Kontakt",
+      cta_whatsapp:"WhatsApp schreiben",
 
-      jar_badge: "Verpackung",
-      jar_title: "Weinblätter — Glas",
-      jar_desc: "Standardisierte Spezifikationen für Regal und Großhandelsvertrieb.",
-      spec_volume: "Volumen",
-      spec_drained: "Abtropfgewicht",
-      jar_b1: "Regalfreundliches Format",
-      jar_b2: "Stabile Lieferung für Großhandel",
-      jar_b3: "Qualität mit Fokus auf Konsistenz",
+      pack_title:"Verpackungsoptionen",
+      pack_desc:"Formate für Einzelhandel und Großhandelsvertrieb. Zuverlässige Qualität durch Standardspezifikationen.",
+      th_type:"Typ",
+      th_size:"Größe",
+      row_jar:"Glas",
+      row_jar_size:"1062cc • Abtropfgewicht 454g",
+      row_vac:"Vakuumbeutel",
+      row_vac_size:"350g und 700g",
 
-      vac_badge: "Verpackung",
-      vac_title: "Weinblätter — Vakuumbeutel",
-      vac_desc: "Vakuumbeutel-Optionen für praktische Handhabung und flexible Lieferung.",
-      spec_sizes: "Gewichtsoptionen",
-      vac_b1: "Effizient für Lagerung und Versand",
-      vac_b2: "Flexible Bestellungen nach Bedarf",
-      vac_b3: "Geeignet für Retail & Großhandel",
+      b2b_title:"B2B geeignet",
+      b2b_desc:"Angebotsbasierte Preise und geplante Lieferungen.",
+      quality_title:"Konstante Qualität",
+      quality_desc:"Zuverlässige Qualität durch Standardspezifikationen.",
 
-      cta2_title: "Angebot & Infos",
-      cta2_desc: "Für Preise, Karton-/Inhaltsdetails und Lieferinformationen schreiben Sie uns schnell über WhatsApp.",
-      cta2_btn: "WhatsApp schreiben",
-      cta2_btn2: "Kontakt",
-
-      wa_title: "WhatsApp",
-      wa_sub: "Schnellkontakt",
-      wa_msg: "Hallo, bitte senden Sie Preis-/Lieferinfos für YASOU Weinblätter. Glas: 1062cc (Abtropfgewicht 454g). Vakuum: 350g und 700g."
+      wa_title:"WhatsApp",
+      wa_sub:"Schnellkontakt",
+      wa_msg:"Hallo, ich möchte Preis- und Lieferinformationen für YASOU / UFOODS Weinblätter erhalten."
     }
   };
 
@@ -528,24 +640,9 @@
     const link = `https://wa.me/${PHONE}?text=${msg}`;
     document.getElementById("waBtn").href = link;
     document.getElementById("waInline").href = link;
-    document.getElementById("waInlineTop").href = link;
+    document.getElementById("waTop").href = link;
   }
 
-  // reveal
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(ent=>{ if(ent.isIntersecting) ent.target.classList.add('show'); });
-  }, {threshold: 0.12});
-  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
-
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // mobile menu
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger?.addEventListener('click', () => mobileMenu.classList.toggle('show'));
-
-  // language menu
   const langBtn = document.getElementById("langBtn");
   const langMenu = document.getElementById("langMenu");
   function closeLangMenu(){
@@ -566,8 +663,9 @@
     });
   });
 
-  // init
+  document.getElementById('year').textContent = new Date().getFullYear();
   applyLang(getInitialLang());
 </script>
+
 </body>
 </html>
