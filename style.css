@@ -445,15 +445,23 @@ footer{
 }
 
 .waBadge{
-  width:34px;
-  height:34px;
+  width:40px;
+  height:40px;
   border-radius:999px;
   display:grid;
   place-items:center;
-  background:#25D366;         /* WhatsApp yeşili */
+  background:#25D366;          /* WhatsApp green */
   border:1px solid rgba(0,0,0,.06);
-  color:#ffffff;              /* ikon beyaz */
+  color:#ffffff;
 }
+
+.waIcon{
+  width:20px;
+  height:20px;
+  display:block;
+  fill:currentColor;           /* beyaz ikon */
+}
+
 
 
 .wa small{
