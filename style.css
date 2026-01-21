@@ -31,6 +31,9 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color:var(--text);
   background:var(--bg);
+  background-image: none !important;
+}
+
 }
 
 a{ color:inherit; text-decoration:none; }
