@@ -5,10 +5,9 @@
   --text:#111827;
   --muted:#4b5563;
   --muted2:#6b7280;
-
   --line:#e5e7eb;
 
-  /* Marka yeşili (butonlarda) */
+  /* Marka yeşili */
   --green:#1f7a3e;
   --green2:#2aa96b;
 
@@ -25,18 +24,19 @@
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 
+/* ✅ Mor link + alt çizgi fix (visited dahil) */
+a, a:visited{
+  color:inherit;
+  text-decoration:none;
+}
+
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color:var(--text);
   background: var(--bg);
-  background-image: none !important;
+  background-image: none !important; /* ✅ yeşil bant çizgi fix */
 }
-
-
-}
-
-a{ color:inherit; text-decoration:none; }
 
 .container{
   max-width:var(--container);
@@ -63,24 +63,27 @@ a{ color:inherit; text-decoration:none; }
   padding:14px 0;
 }
 
-/* Logo – buton gibi değil, daha ciddi */
+/* ✅ Logo büyük + buton gibi tıklanabilir alan */
 .brandLogo{
   display:flex;
   align-items:center;
   padding:10px 12px;
   border-radius:12px;
-  transition: background .12s ease, transform .12s ease;
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
 }
+
 .brandLogo:hover{
   background:rgba(17,24,39,.03);
+  transform:translateY(-1px);
 }
+
 .brandLogo img{
-  height:44px;
+  height:44px;   /* ✅ logo büyüdü */
   width:auto;
   display:block;
 }
 
-/* Menü – daha kurumsal yazı */
+/* Menü */
 .menu{
   display:flex;
   align-items:center;
@@ -90,19 +93,32 @@ a{ color:inherit; text-decoration:none; }
   letter-spacing:-0.01em;
 }
 
+/* ✅ Premium hover glow + büyüme */
 .menu a{
   padding:10px 12px;
-  border-radius:10px;
-  transition: background .12s ease, color .12s ease;
+  border-radius:12px;
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease;
+  text-decoration:none;
+  color:var(--muted);
+  position:relative;
 }
+
 .menu a:hover{
-  background:rgba(17,24,39,.04);
-  color:var(--text);
+  background: rgba(31,122,62,.06);
+  color: var(--text);
+  box-shadow: 0 0 0 4px rgba(31,122,62,.18); /* ✅ dış glow */
+  transform: translateY(-1px) scale(1.02);   /* ✅ premium hareket */
 }
 
 .menu a.active{
-  background:rgba(31,122,62,.10);
-  color:var(--green);
+  background: rgba(31,122,62,.12);
+  color: var(--green);
+  box-shadow: 0 0 0 4px rgba(31,122,62,.12);
+}
+
+/* visited link fix menü için ekstra garanti */
+.menu a:visited{
+  color:var(--muted);
 }
 
 /* Sağ alan */
@@ -124,32 +140,42 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================
-   BUTTONS (Kurumsal)
+   BUTTONS (Kurumsal + premium)
    ========================= */
 .btn{
   border:none;
   cursor:pointer;
   border-radius:999px;
-  padding:11px 16px;
+  padding:13px 18px;     /* ✅ büyüdü */
   font-weight:800;
-  transition: filter .12s ease, box-shadow .12s ease, transform .12s ease;
+  font-size:15px;
+  transition: filter .15s ease, box-shadow .15s ease, transform .15s ease;
 }
-.btn:active{ transform:translateY(0px); }
+
+.btn:active{
+  transform:translateY(0px);
+}
 
 .btnPrimary{
   background:var(--green);
   color:#fff;
   box-shadow: 0 10px 18px rgba(31,122,62,.14);
 }
-.btnPrimary:hover{ filter:brightness(1.04); }
+
+.btnPrimary:hover{
+  filter:brightness(1.04);
+  transform:translateY(-1px);
+}
 
 .btnGhost{
   background:#fff;
   border:1px solid var(--line);
   color:var(--text);
 }
+
 .btnGhost:hover{
   box-shadow: var(--shadow);
+  transform:translateY(-1px);
 }
 
 /* =========================
@@ -172,7 +198,7 @@ a{ color:inherit; text-decoration:none; }
 
 .heroCard{ padding:28px; }
 
-/* Tag – neon değil, minimal label */
+/* Tag – minimal */
 .tag{
   display:inline-flex;
   align-items:center;
@@ -209,7 +235,7 @@ a{ color:inherit; text-decoration:none; }
   margin-top:18px;
 }
 
-/* Chip – crypto hissini azaltmak için daha düz */
+/* Chip – düz & kurumsal */
 .chips{
   display:flex;
   flex-wrap:wrap;
@@ -339,7 +365,10 @@ a{ color:inherit; text-decoration:none; }
   color:var(--muted);
   line-height:1.6;
 }
-.specList li{ padding:4px 0; }
+
+.specList li{
+  padding:4px 0;
+}
 
 .badgeRow{
   display:flex;
@@ -375,6 +404,7 @@ a{ color:inherit; text-decoration:none; }
   padding:12px 0;
   border-bottom:1px solid var(--line);
 }
+
 .kv:last-child{ border-bottom:none; }
 .kv span{ color:var(--muted); font-weight:750; }
 .kv b{ font-weight:900; }
@@ -397,7 +427,7 @@ footer{
   padding-top:14px;
 }
 
-/* WhatsApp floating – daha sade */
+/* WhatsApp floating – sade */
 .wa{
   position:fixed;
   right:18px;
