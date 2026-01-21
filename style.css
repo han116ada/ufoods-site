@@ -450,10 +450,11 @@ footer{
   border-radius:999px;
   display:grid;
   place-items:center;
-  background:rgba(31,122,62,.10);
-  border:1px solid rgba(31,122,62,.20);
-  color:var(--green);
+  background:#25D366;         /* WhatsApp yeşili */
+  border:1px solid rgba(0,0,0,.06);
+  color:#ffffff;              /* ikon beyaz */
 }
+
 
 .wa small{
   display:block;
