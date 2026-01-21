@@ -27,12 +27,12 @@ html,body{ height:100%; }
 
 body{
   margin:0;
-  /* Kurumsal font hissi */
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color:var(--text);
-  background:var(--bg);
+  background: var(--bg);
   background-image: none !important;
 }
+
 
 }
 
@@ -67,15 +67,15 @@ a{ color:inherit; text-decoration:none; }
 .brandLogo{
   display:flex;
   align-items:center;
-  padding:4px 2px;
-  border-radius:10px;
-  background:transparent;
+  padding:10px 12px;
+  border-radius:12px;
+  transition: background .12s ease, transform .12s ease;
 }
 .brandLogo:hover{
   background:rgba(17,24,39,.03);
 }
 .brandLogo img{
-  height:32px;
+  height:44px;
   width:auto;
   display:block;
 }
